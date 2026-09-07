@@ -1,4 +1,4 @@
-#include "CKrnl_GroupBox.h"
+ï»¿#include "CKrnl_GroupBox.h"
 
 CKrnl_GroupBox::CKrnl_GroupBox()
 {
@@ -25,31 +25,31 @@ std::string CKrnl_GroupBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±êÌâ";
+		return "æ ‡é¢˜";
 	case 9:
-		return "¶ÔÆë·½Ê½";
+		return "å¯¹é½æ–¹å¼";
 	case 10:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 11:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 12:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <pro.h>
 #include <idp.hpp>
 #include "SectionManager.h"
@@ -10,9 +10,9 @@
 
 enum EArchitectureType
 {
-	E_UNKNOWN = 0,  //Î´ÖªÀàĞÍ
-	E_DYNAMIC,      //¶¯Ì¬±àÒë³ÌĞò
-	E_STATIC,       //¾²Ì¬±àÒë³ÌĞò
+	E_UNKNOWN = 0,  //æœªçŸ¥ç±»å‹
+	E_DYNAMIC,      //åŠ¨æ€ç¼–è¯‘ç¨‹åº
+	E_STATIC,       //é™æ€ç¼–è¯‘ç¨‹åº
 };
 
 class IDAMenu;
@@ -24,18 +24,18 @@ public:
 	~EDecompiler();
 public:
 	bool idaapi run(size_t) override;
-	//³õÊ¼»¯Ò×ÓïÑÔ·´±àÒëÒıÇæ
+	//åˆå§‹åŒ–æ˜“è¯­è¨€åç¼–è¯‘å¼•æ“
 	bool InitDecompilerEngine();
 private:
-	//É¨ÃèÒ×ÓïÑÔº¯Êı
+	//æ‰«ææ˜“è¯­è¨€å‡½æ•°
 	void makeFunction(ea_t startAddr, ea_t endAddr);
 
-	//Ì½²âÒ×ÓïÑÔ³ÌĞòÀàĞÍ
+	//æ¢æµ‹æ˜“è¯­è¨€ç¨‹åºç±»å‹
 	bool initEArchitectureType();
 
 	bool Parse_EStatic(unsigned int eHeadAddr);
 
-	//µ¼ÈëÒ×ÓïÑÔÉùÃ÷
+	//å¯¼å…¥æ˜“è¯­è¨€å£°æ˜
 	void ImportsEStructure();
 public:
 	EArchitectureType arch;

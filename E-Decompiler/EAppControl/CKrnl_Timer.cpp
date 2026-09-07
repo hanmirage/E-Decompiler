@@ -1,4 +1,4 @@
-#include "CKrnl_Timer.h"
+ï»¿#include "CKrnl_Timer.h"
 
 
 CKrnl_Timer::CKrnl_Timer()
@@ -17,10 +17,10 @@ std::string CKrnl_Timer::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		ret = "ÖÜÆÚÊÂ¼ş";
+		ret = "å‘¨æœŸäº‹ä»¶";
 		break;
 	default:
-		ret = "Î´ÖªÊÂ¼ş";
+		ret = "æœªçŸ¥äº‹ä»¶";
 		break;
 	}
 	return ret;
@@ -36,23 +36,23 @@ std::string CKrnl_Timer::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "Ê±ÖÓÖÜÆÚ";
+		return "æ—¶é’Ÿå‘¨æœŸ";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

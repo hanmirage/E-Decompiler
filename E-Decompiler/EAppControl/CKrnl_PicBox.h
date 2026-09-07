@@ -1,7 +1,7 @@
-#pragma once
+﻿#pragma once
 #include "EAppControl.h"
 
-//ͼƬ��
+//图片框
 
 
 struct CKrnl_PicBox :public EAppControl

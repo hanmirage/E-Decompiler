@@ -1,4 +1,4 @@
-#include "CTreeFixer.h"
+ï»¿#include "CTreeFixer.h"
 #include <hexrays.hpp>
 #include "../EDecompiler.h"
 #include <typeinf.hpp>
@@ -8,7 +8,7 @@
 #include <frame.hpp>
 #include <allins.hpp>
 
-//ÏÖ½×¶ÎÄ¿µÄÊÇÈÃ´úÂë¿É¶Á»¯£¬²»ÊÇÖ±½Óµ½Ô´Âë£¬Òò´ËÃ»±ØÒªÔÚ´úÂë×ª»»Ï¸½Ú½øĞĞ¹ı¶ÈÓÅ»¯
+//ç°é˜¶æ®µç›®çš„æ˜¯è®©ä»£ç å¯è¯»åŒ–ï¼Œä¸æ˜¯ç›´æ¥åˆ°æºç ï¼Œå› æ­¤æ²¡å¿…è¦åœ¨ä»£ç è½¬æ¢ç»†èŠ‚è¿›è¡Œè¿‡åº¦ä¼˜åŒ–
 
 void fix_KrnlDllCmd(cexpr_t* e, ESymbol& symbolTable)
 {
@@ -40,9 +40,9 @@ void fix_KrnlWriteProperty(cexpr_t* e, ESymbol& symbolTable)
 	if (!appControl) {
 		return;
 	}
-	//Éú³Éº¯ÊıÃû×Ö
+	//ç”Ÿæˆå‡½æ•°åå­—
 	qstring helperFuncName;
-	helperFuncName.sprnt("%s::%s_Ğ´ÊôĞÔ_%s", appControl->controlTypeName.c_str(),
+	helperFuncName.sprnt("%s::%s_å†™å±æ€§_%s", appControl->controlTypeName.c_str(),
 		appControl->controlName.c_str(), appControl->GetPropertyName(properIndex).c_str());
 	qstring utf8FuncName;
 	acp_utf8(&utf8FuncName, helperFuncName.c_str());
@@ -57,7 +57,7 @@ void fix_KrnlWriteProperty(cexpr_t* e, ESymbol& symbolTable)
 
 void fix_KrnlLibFunc(cexpr_t* e, ESymbol& symbolTable)
 {
-	//²ÎÊıÖÁÉÙÊÇÁ½¸ö
+	//å‚æ•°è‡³å°‘æ˜¯ä¸¤ä¸ª
 	carglist_t& argList = *(e->a);
 	if (argList.size() < 2) {
 		return;
@@ -91,9 +91,9 @@ void fix_KrnlReadProperty(cexpr_t* e, ESymbol& symbolTable)
 		return;
 	}
 
-	//Éú³Éº¯ÊıÃû×Ö
+	//ç”Ÿæˆå‡½æ•°åå­—
 	qstring helperFuncName;
-	helperFuncName.sprnt("%s::%s_¶ÁÊôĞÔ_%s", appControl->controlTypeName.c_str(),
+	helperFuncName.sprnt("%s::%s_è¯»å±æ€§_%s", appControl->controlTypeName.c_str(),
 		appControl->controlName.c_str(), appControl->GetPropertyName(properIndex).c_str());
 	qstring utf8FuncName;
 	acp_utf8(&utf8FuncName,helperFuncName.c_str());
@@ -102,7 +102,7 @@ void fix_KrnlReadProperty(cexpr_t* e, ESymbol& symbolTable)
 	e->x->cleanup();
 	e->x->replace_by(tmpHelper);
 
-	//clearÊÇÇåÀí²»¸É¾»Ö¸ÕëµÄ
+	//clearæ˜¯æ¸…ç†ä¸å¹²å‡€æŒ‡é’ˆçš„
 	//argList.erase(argList.begin(),argList.end());
 }
 
@@ -116,7 +116,7 @@ void fix_CalMultiArrayIndex(cexpr_t* e, ESymbol& symbolTable)
 struct CTreeFixer_Vistor : public ctree_visitor_t
 {
 	CTreeFixer_Vistor(ESymbol& s) :ctree_visitor_t(CV_FAST),symbolTable(s) {};
-	//·µ»Ø0±íÊ¾¼ÌĞø±éÀú
+	//è¿”å›0è¡¨ç¤ºç»§ç»­éå†
 	int idaapi visit_expr(cexpr_t* e) override
 	{
 		if (e->op == cot_call) {
@@ -163,7 +163,7 @@ void tryFixCTree(cfunc_t* cfunc,ESymbol& symbolTable)
 	return;
 }
 
-//½«¿éfromBlkÒÆ¶¯µ½¿étoBlkÎ²²¿
+//å°†å—fromBlkç§»åŠ¨åˆ°å—toBlkå°¾éƒ¨
 
 void mergeBlocks(mblock_t* dst, mblock_t* src)
 {

@@ -1,4 +1,4 @@
-#include "CKrnl_Label.h"
+ï»¿#include "CKrnl_Label.h"
 
 
 CKrnl_Label::CKrnl_Label()
@@ -17,31 +17,31 @@ std::string CKrnl_Label::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		ret = "·´À¡ÊÂ¼ş";
+		ret = "åé¦ˆäº‹ä»¶";
 		break;
 	case -1:
-		ret = "Êó±ê×ó¼ü±»°´ÏÂ";
+		ret = "é¼ æ ‡å·¦é”®è¢«æŒ‰ä¸‹";
 		break;
 	case -2:
-		ret = "Êó±ê×ó¼ü±»·Å¿ª";
+		ret = "é¼ æ ‡å·¦é”®è¢«æ”¾å¼€";
 		break;
 	case -3:
-		ret = "±»Ë«»÷";
+		ret = "è¢«åŒå‡»";
 		break;
 	case -4:
-		ret = "Êó±êÓÒ¼ü±»°´ÏÂ";
+		ret = "é¼ æ ‡å³é”®è¢«æŒ‰ä¸‹";
 		break;
 	case -5:
-		ret = "Êó±êÓÒ¼ü±»·Å¿ª";
+		ret = "é¼ æ ‡å³é”®è¢«æ”¾å¼€";
 		break;
 	case -6:
-		ret = "Êó±êÎ»ÖÃ±»ÒÆ¶¯";
+		ret = "é¼ æ ‡ä½ç½®è¢«ç§»åŠ¨";
 		break;
 	case -12:
-		ret = "¹öÂÖ±»¹ö¶¯";
+		ret = "æ»šè½®è¢«æ»šåŠ¨";
 		break;
 	default:
-		ret = "Î´ÖªÊÂ¼ş";
+		ret = "æœªçŸ¥äº‹ä»¶";
 		break;
 	}
 	return ret;
@@ -57,63 +57,63 @@ std::string CKrnl_Label::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±êÌâ";
+		return "æ ‡é¢˜";
 	case 9:
-		return "Ğ§¹û";
+		return "æ•ˆæœ";
 	case 10:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 11:
-		return "½¥±ä±ß¿ò¿í¶È";
+		return "æ¸å˜è¾¹æ¡†å®½åº¦";
 	case 12:
-		return "½¥±ä±ß¿òÑÕÉ«1";
+		return "æ¸å˜è¾¹æ¡†é¢œè‰²1";
 	case 13:
-		return "½¥±ä±ß¿òÑÕÉ«2";
+		return "æ¸å˜è¾¹æ¡†é¢œè‰²2";
 	case 14:
-		return "½¥±ä±ß¿òÑÕÉ«3";
+		return "æ¸å˜è¾¹æ¡†é¢œè‰²3";
 	case 15:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 16:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 17:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 18:
-		return "µ×Í¼";
+		return "åº•å›¾";
 	case 19:
-		return "µ×Í¼·½Ê½";
+		return "åº•å›¾æ–¹å¼";
 	case 20:
-		return "½¥±ä±³¾°·½Ê½";
+		return "æ¸å˜èƒŒæ™¯æ–¹å¼";
 	case 21:
-		return "½¥±ä±³¾°ÑÕÉ«1";
+		return "æ¸å˜èƒŒæ™¯é¢œè‰²1";
 	case 22:
-		return "½¥±ä±³¾°ÑÕÉ«2";
+		return "æ¸å˜èƒŒæ™¯é¢œè‰²2";
 	case 23:
-		return "½¥±ä±³¾°ÑÕÉ«3";
+		return "æ¸å˜èƒŒæ™¯é¢œè‰²3";
 	case 24:
-		return "ºáÏò¶ÔÆë·½Ê½";
+		return "æ¨ªå‘å¯¹é½æ–¹å¼";
 	case 25:
-		return "ÊÇ·ñ×Ô¶¯ÕÛĞĞ";
+		return "æ˜¯å¦è‡ªåŠ¨æŠ˜è¡Œ";
 	case 26:
-		return "×İÏò¶ÔÆë·½Ê½";
+		return "çºµå‘å¯¹é½æ–¹å¼";
 	case 27:
-		return "Êı¾İÔ´";
+		return "æ•°æ®æº";
 	case 28:
-		return "Êı¾İÁĞ";
+		return "æ•°æ®åˆ—";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

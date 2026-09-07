@@ -1,4 +1,4 @@
-#include "CIext2_CartoonBox.h"
+ï»¿#include "CIext2_CartoonBox.h"
 
 CIext2_CartoonBox::CIext2_CartoonBox()
 {
@@ -15,41 +15,41 @@ std::string CIext2_CartoonBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "ÎïÌå×ó¼ü±»°´ÏÂ";
+		return "ç‰©ä½“å·¦é”®è¢«æŒ‰ä¸‹";
 	case 1:
-		return "ÎïÌåÓÒ¼ü±»°´ÏÂ";
+		return "ç‰©ä½“å³é”®è¢«æŒ‰ä¸‹";
 	case 2:
-		return "ÎïÌå×ó¼ü±»·Å¿ª";
+		return "ç‰©ä½“å·¦é”®è¢«æ”¾å¼€";
 	case 3:
-		return "ÎïÌåÓÒ¼ü±»·Å¿ª";
+		return "ç‰©ä½“å³é”®è¢«æ”¾å¼€";
 	case 4:
-		return "Ë«»÷ÎïÌå";
+		return "åŒå‡»ç‰©ä½“";
 	case 5:
-		return "½øÈëÎïÌå";
+		return "è¿›å…¥ç‰©ä½“";
 	case 6:
-		return "Àë¿ªÎïÌå";
+		return "ç¦»å¼€ç‰©ä½“";
 	case 7:
-		return "¶¯»­¿òÊó±êÎ»ÖÃ¸Ä±ä";
+		return "åŠ¨ç”»æ¡†é¼ æ ‡ä½ç½®æ”¹å˜";
 	case 8:
-		return "ÎïÌåÎ»ÖÃ½«¸Ä±ä";
+		return "ç‰©ä½“ä½ç½®å°†æ”¹å˜";
 	case 9:
-		return "ÎïÌåÎ»ÖÃÒÑ¸Ä±ä";
+		return "ç‰©ä½“ä½ç½®å·²æ”¹å˜";
 	case 10:
-		return "ÎïÌå½«Ïú»Ù";
+		return "ç‰©ä½“å°†é”€æ¯";
 	case 11:
-		return "Åö×²µ½ÎïÌå";
+		return "ç¢°æ’åˆ°ç‰©ä½“";
 	case 12:
-		return "Åö×²µ½±ß½ç";
+		return "ç¢°æ’åˆ°è¾¹ç•Œ";
 	case 13:
-		return "Ô½³ö±ß½ç";
+		return "è¶Šå‡ºè¾¹ç•Œ";
 	case 14:
-		return "×Ô¶¯Ç°½øÍ£Ö¹";
+		return "è‡ªåŠ¨å‰è¿›åœæ­¢";
 	case 15:
-		return "×Ô¶¯Ğı×ªÍ£Ö¹";
+		return "è‡ªåŠ¨æ—‹è½¬åœæ­¢";
 	case 16:
-		return "¶¯»­²¥·ÅÍê±Ï";
+		return "åŠ¨ç”»æ’­æ”¾å®Œæ¯•";
 	case 17:
-		return "¼àÊÓ¼ü±»°´ÏÂ";
+		return "ç›‘è§†é”®è¢«æŒ‰ä¸‹";
 	default:
 		break;
 	}
@@ -66,48 +66,48 @@ std::string CIext2_CartoonBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 9:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 10:
-		return "±³¾°Í¼Æ¬";
+		return "èƒŒæ™¯å›¾ç‰‡";
 	case 11:
-		return "ÏÔÊ¾·½Ê½";
+		return "æ˜¾ç¤ºæ–¹å¼";
 	case 12:
-		return "»­±ÊÀàĞÍ";
+		return "ç”»ç¬”ç±»å‹";
 	case 13:
-		return "»­³ö·½Ê½";
+		return "ç”»å‡ºæ–¹å¼";
 	case 14:
-		return "»­±Ê´ÖÏ¸";
+		return "ç”»ç¬”ç²—ç»†";
 	case 15:
-		return "»­±ÊÑÕÉ«";
+		return "ç”»ç¬”é¢œè‰²";
 	case 16:
-		return "Ë¢×ÓÀàĞÍ";
+		return "åˆ·å­ç±»å‹";
 	case 17:
-		return "Ë¢×ÓÑÕÉ«";
+		return "åˆ·å­é¢œè‰²";
 	case 18:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 19:
-		return "ÎÄ±¾±³¾°ÑÕÉ«";
+		return "æ–‡æœ¬èƒŒæ™¯é¢œè‰²";
 	case 20:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }
 

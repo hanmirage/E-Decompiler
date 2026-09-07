@@ -1,4 +1,4 @@
-#include "EAppControlFactory.h"
+ï»¿#include "EAppControlFactory.h"
 #include "../ESymbol.h"
 #include "../Utils/Common.h"
 #include "CKrnl_window.h"
@@ -37,60 +37,60 @@ EAppControlFactory& EAppControlFactory::Instance()
 
 void EAppControlFactory::RegisterEAppControl(std::string eControlLibInfo,unsigned int controlTypeId)
 {
-	//¿âGuid + ¿Ø¼şÃû³Æ => ¿Ø¼şÀàĞÍ
+	//åº“Guid + æ§ä»¶åç§° => æ§ä»¶ç±»å‹
 	static std::map<std::string, fCreateEAppControl> tmpControlMap;
 	if (!tmpControlMap.size()) {
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325´°¿Ú"] = fCreateEAppControl(CKrnl_window::create);
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325²Ëµ¥"] = fCreateEAppControl(CKrnl_Menu::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325±à¼­¿ò"] = fCreateEAppControl(CKrnl_EditBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325Í¼Æ¬¿ò"] = fCreateEAppControl(CKrnl_PicBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325ÍâĞÎ¿ò"] = fCreateEAppControl(CKrnl_ShapeBox::create);;
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325»­°å"] = fCreateEAppControl(CKrnl_DrawPanel::create);;
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325·Ö×é¿ò"] = fCreateEAppControl(CKrnl_GroupBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325±êÇ©"] = fCreateEAppControl(CKrnl_Label::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325°´Å¥"] = fCreateEAppControl(CKrnl_Button::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325Ñ¡Ôñ¿ò"] = fCreateEAppControl(CKrnl_CheckBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325µ¥Ñ¡¿ò"] = fCreateEAppControl(CKrnl_RadioBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325×éºÏ¿ò"] = fCreateEAppControl(CKrnl_ComboBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325ÁĞ±í¿ò"] = fCreateEAppControl(CKrnl_ListBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325Ñ¡ÔñÁĞ±í¿ò"] = fCreateEAppControl(CKrnl_ChkListBox::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325ºáÏò¹ö¶¯Ìõ"] = fCreateEAppControl(CKrnl_HScrollBar::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325×İÏò¹ö¶¯Ìõ"] = fCreateEAppControl(CKrnl_VScrollBar::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325½ø¶ÈÌõ"] = fCreateEAppControl(CKrnl_ProcessBar::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325»¬¿éÌõ"] = fCreateEAppControl(CKrnl_SliderBar::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325Ñ¡Ôñ¼Ğ"] = fCreateEAppControl(CKrnl_Tab::create);
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325Ó°Ïñ¿ò"] = fCreateEAppControl(CKrnl_AnimateBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325çª—å£"] = fCreateEAppControl(CKrnl_window::create);
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325èœå•"] = fCreateEAppControl(CKrnl_Menu::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325ç¼–è¾‘æ¡†"] = fCreateEAppControl(CKrnl_EditBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325å›¾ç‰‡æ¡†"] = fCreateEAppControl(CKrnl_PicBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325å¤–å½¢æ¡†"] = fCreateEAppControl(CKrnl_ShapeBox::create);;
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325ç”»æ¿"] = fCreateEAppControl(CKrnl_DrawPanel::create);;
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325åˆ†ç»„æ¡†"] = fCreateEAppControl(CKrnl_GroupBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325æ ‡ç­¾"] = fCreateEAppControl(CKrnl_Label::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325æŒ‰é’®"] = fCreateEAppControl(CKrnl_Button::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325é€‰æ‹©æ¡†"] = fCreateEAppControl(CKrnl_CheckBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325å•é€‰æ¡†"] = fCreateEAppControl(CKrnl_RadioBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325ç»„åˆæ¡†"] = fCreateEAppControl(CKrnl_ComboBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325åˆ—è¡¨æ¡†"] = fCreateEAppControl(CKrnl_ListBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325é€‰æ‹©åˆ—è¡¨æ¡†"] = fCreateEAppControl(CKrnl_ChkListBox::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325æ¨ªå‘æ»šåŠ¨æ¡"] = fCreateEAppControl(CKrnl_HScrollBar::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325çºµå‘æ»šåŠ¨æ¡"] = fCreateEAppControl(CKrnl_VScrollBar::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325è¿›åº¦æ¡"] = fCreateEAppControl(CKrnl_ProcessBar::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325æ»‘å—æ¡"] = fCreateEAppControl(CKrnl_SliderBar::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325é€‰æ‹©å¤¹"] = fCreateEAppControl(CKrnl_Tab::create);
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325å½±åƒæ¡†"] = fCreateEAppControl(CKrnl_AnimateBox::create);
 
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325ÈÕÆÚ¿ò"] = krnl_DatePicker;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325ÔÂÀú"] = krnl_MonthCalendar;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Çı¶¯Æ÷¿ò"] = krnl_DriverBox;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Ä¿Â¼¿ò"] = krnl_DirBox;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325ÎÄ¼ş¿ò"] = krnl_FileBox;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325ÑÕÉ«Ñ¡ÔñÆ÷"] = krnl_ColorPicker;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325³¬¼¶Á´½ÓÆ÷"] = krnl_HyperLinker;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325µ÷½ÚÆ÷"] = krnl_Spin;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Í¨ÓÃ¶Ô»°¿ò"] = krnl_CommonDlg;
-		tmpControlMap["d09f2340818511d396f6aaf844c7e325Ê±ÖÓ"] = fCreateEAppControl(CKrnl_Timer::create);
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325´òÓ¡»ú"] = krnl_printer;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Êı¾İ±¨"] = krnl_UDP;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325¿Í»§"] = krnl_Client;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325·şÎñÆ÷"] = krnl_Server;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325¶Ë¿Ú"] = krnl_SerialPort;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325±í¸ñ"] = krnl_Grid;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Êı¾İÔ´"] = krnl_DataSrc;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Í¨ÓÃÌá¹©Õß"] = krnl_NProvider;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Êı¾İ¿âÌá¹©Õß"] = krnl_DBProvider;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Í¼ĞÎ°´Å¥"] = krnl_PicBtn;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Íâ²¿Êı¾İ¿â"] = krnl_ODBCDB;
-		//tmpControlMap["d09f2340818511d396f6aaf844c7e325Íâ²¿Êı¾İÌá¹©Õß"] = krnl_ODBCProvider;
-		//tmpControlMap["{9DA96BF9CEBD45c5BFCF94CBE61671F5}ÍÏ·Å¶ÔÏó"] = krnl_DropTarget;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æ—¥æœŸæ¡†"] = krnl_DatePicker;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æœˆå†"] = krnl_MonthCalendar;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325é©±åŠ¨å™¨æ¡†"] = krnl_DriverBox;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325ç›®å½•æ¡†"] = krnl_DirBox;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æ–‡ä»¶æ¡†"] = krnl_FileBox;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325é¢œè‰²é€‰æ‹©å™¨"] = krnl_ColorPicker;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325è¶…çº§é“¾æ¥å™¨"] = krnl_HyperLinker;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325è°ƒèŠ‚å™¨"] = krnl_Spin;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325é€šç”¨å¯¹è¯æ¡†"] = krnl_CommonDlg;
+		tmpControlMap["d09f2340818511d396f6aaf844c7e325æ—¶é’Ÿ"] = fCreateEAppControl(CKrnl_Timer::create);
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æ‰“å°æœº"] = krnl_printer;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æ•°æ®æŠ¥"] = krnl_UDP;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325å®¢æˆ·"] = krnl_Client;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æœåŠ¡å™¨"] = krnl_Server;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325ç«¯å£"] = krnl_SerialPort;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325è¡¨æ ¼"] = krnl_Grid;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æ•°æ®æº"] = krnl_DataSrc;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325é€šç”¨æä¾›è€…"] = krnl_NProvider;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325æ•°æ®åº“æä¾›è€…"] = krnl_DBProvider;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325å›¾å½¢æŒ‰é’®"] = krnl_PicBtn;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325å¤–éƒ¨æ•°æ®åº“"] = krnl_ODBCDB;
+		//tmpControlMap["d09f2340818511d396f6aaf844c7e325å¤–éƒ¨æ•°æ®æä¾›è€…"] = krnl_ODBCProvider;
+		//tmpControlMap["{9DA96BF9CEBD45c5BFCF94CBE61671F5}æ‹–æ”¾å¯¹è±¡"] = krnl_DropTarget;
 
-		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CC³¬¼¶°´Å¥"] = fCreateEAppControl(CIext2_SuperBtn::create);
-		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CC¸ß¼¶Ó°Ïñ¿ò"] = fCreateEAppControl(CIext2_SuperAnimateBox::create);
-		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CC·Ö¸îÌõ"] = fCreateEAppControl(CIext2_SplitterBar::create);
-		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CC³¬¼¶±à¼­¿ò"] = fCreateEAppControl(CIext2_RichEdit::create);
-		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCIP±à¼­¿ò"] = fCreateEAppControl(CIext2_IPEditBox::create);
-		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CC¶¯»­¿ò"] = fCreateEAppControl(CIext2_CartoonBox::create);
+		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCè¶…çº§æŒ‰é’®"] = fCreateEAppControl(CIext2_SuperBtn::create);
+		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCé«˜çº§å½±åƒæ¡†"] = fCreateEAppControl(CIext2_SuperAnimateBox::create);
+		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCåˆ†å‰²æ¡"] = fCreateEAppControl(CIext2_SplitterBar::create);
+		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCè¶…çº§ç¼–è¾‘æ¡†"] = fCreateEAppControl(CIext2_RichEdit::create);
+		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCIPç¼–è¾‘æ¡†"] = fCreateEAppControl(CIext2_IPEditBox::create);
+		tmpControlMap["AF6AD80AA4244A59AFB3D83ECF5173CCåŠ¨ç”»æ¡†"] = fCreateEAppControl(CIext2_CartoonBox::create);
 	}
 
 	std::map<std::string, fCreateEAppControl>::iterator it = tmpControlMap.find(eControlLibInfo);
@@ -119,7 +119,7 @@ EAppControl_Unknow* EAppControl_Unknow::create()
 
 std::string EAppControl_Unknow::GetEventName(int eventIndex)
 {
-	return "Î´ÖªÊÂ¼ş";
+	return "æœªçŸ¥äº‹ä»¶";
 }
 
 bool EAppControl_Unknow::InitControlExtraData(unsigned int propertyAddr, unsigned int propertySize)
@@ -129,5 +129,5 @@ bool EAppControl_Unknow::InitControlExtraData(unsigned int propertyAddr, unsigne
 
 std::string EAppControl_Unknow::GetPropertyName(unsigned int propertyIndex)
 {
-	return "Î´Öª";
+	return "æœªçŸ¥";
 }

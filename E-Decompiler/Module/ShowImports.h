@@ -1,5 +1,5 @@
-#pragma once
+ï»¿#pragma once
 
-//Õ¹Ê¾Ò×ÓïÑÔµ¼Èë±í
+//å±•ç¤ºæ˜“è¯­è¨€å¯¼å…¥è¡¨
 
 int ShowImports(void* ud);

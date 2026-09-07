@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//µ¥Ñ¡¿ò
+//å•é€‰æ¡†
 
 struct CKrnl_RadioBox :public EAppControl
 {

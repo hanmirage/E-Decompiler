@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 #include <vector>
 #include "../ELib.h"
@@ -6,31 +6,31 @@
 struct EAppControl
 {
 public:
-	//È¡ÊÂ¼şË÷Òı¶ÔÓ¦µÄÃû³Æ
+	//å–äº‹ä»¶ç´¢å¼•å¯¹åº”çš„åç§°
 	virtual std::string GetEventName(int eventIndex) = 0;
-	//¼ÓÔØ¿Ø¼ş¸½¼ÓÊôĞÔÊı¾İ
+	//åŠ è½½æ§ä»¶é™„åŠ å±æ€§æ•°æ®
 	virtual bool InitControlExtraData(unsigned int propertyAddr, unsigned int propertySize);
-	//»ñÈ¡ÊôĞÔÃû³Æ
+	//è·å–å±æ€§åç§°
 	virtual std::string GetPropertyName(unsigned int propertyIndex) = 0;
-	//¹«¹²ÊÂ¼şÃû³Æ
+	//å…¬å…±äº‹ä»¶åç§°
 	std::string GetCommonEventName(int eventIndex);
 public:
 	eSymbol_ControlType type;
-	//¿Ø¼şËùÊô´°¿ÚID
+	//æ§ä»¶æ‰€å±çª—å£ID
 	unsigned int windowID;
-	//¿Ø¼ş×ÔÉíID
+	//æ§ä»¶è‡ªèº«ID
 	unsigned int controlId;
-	//¿Ø¼şÃû³Æ
+	//æ§ä»¶åç§°
 	std::string controlName;
-	//¿Ø¼şËùÊôÊı¾İÀàĞÍµÄID
+	//æ§ä»¶æ‰€å±æ•°æ®ç±»å‹çš„ID
 	unsigned int controlTypeId;
-	//¿Ø¼şÀàĞÍÃû³Æ
+	//æ§ä»¶ç±»å‹åç§°
 	std::string controlTypeName;
-	//ÊôĞÔµØÖ·
+	//å±æ€§åœ°å€
 	unsigned int propertyAddr;
-	//ÊôĞÔ´óĞ¡
+	//å±æ€§å¤§å°
 	int propertySize;
-	//ÊÂ¼ş´¦Àí
+	//äº‹ä»¶å¤„ç†
 	std::vector<eSymbol_EventInfo> eventList;
 };
 

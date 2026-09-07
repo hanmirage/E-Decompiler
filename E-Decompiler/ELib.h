@@ -1,9 +1,9 @@
-#pragma once
+ï»¿#pragma once
 
 struct eSymbol_EventInfo
 {
-	int eventIndex;          //ÊÂ¼şË÷Òı
-	unsigned int eventAddr;  //ÊÂ¼şµØÖ·
+	int eventIndex;          //äº‹ä»¶ç´¢å¼•
+	unsigned int eventAddr;  //äº‹ä»¶åœ°å€
 };
 
 struct eSymbol_ImportsApi
@@ -15,49 +15,49 @@ struct eSymbol_ImportsApi
 enum eSymbol_ControlType
 {
 	UnknownControl = 0,
-	krnl_window,     //´°¿Ú
-	krnl_menu,       //²Ëµ¥
-	krnl_EditBox,    //±à¼­¿ò
-	krnl_PicBox,     //Í¼Æ¬¿ò
-	krnl_ShapeBox,   //ÍâĞÎ¿ò
-	krnl_DrawPanel,  //»­°å
-	krnl_GroupBox,   //·Ö×é¿ò
-	krnl_Label,      //±êÇ©
-	krnl_Button,     //°´Å¥
-	krnl_CheckBox,   //Ñ¡Ôñ¿ò
-	krnl_RadioBox,   //µ¥Ñ¡¿ò
-	krnl_ComboBox,   //×éºÏ¿ò
-	krnl_ListBox,    //ÁĞ±í¿ò
-	krnl_ChkListBox, //Ñ¡ÔñÁĞ±í¿ò
-	krnl_HScrollBar, //ºáÏò¹ö¶¯Ìõ
-	krnl_VScrollBar, //×İÏò¹ö¶¯Ìõ
-	krnl_ProcessBar, //½ø¶ÈÌõ
-	krnl_SliderBar,  //»¬¿éÌõ
-	krnl_Tab,        //Ñ¡Ôñ¼Ğ
-	krnl_AnimateBox, //Ó°Ïñ¿ò
-	krnl_DatePicker, //ÈÕÆÚ¿ò
-	krnl_MonthCalendar,  //ÔÂÀú
-	krnl_DriverBox,  //Çı¶¯Æ÷¿ò
-	krnl_DirBox,     //Ä¿Â¼¿ò
-	krnl_FileBox,    //ÎÄ¼ş¿ò
-	krnl_ColorPicker, //ÑÕÉ«Ñ¡ÔñÆ÷
-	krnl_HyperLinker, //³¬¼¶Á´½ÓÆ÷
-	krnl_Spin,        //µ÷½ÚÆ÷
-	krnl_CommonDlg,   //Í¨ÓÃ¶Ô»°¿ò
-	krnl_Timer,       //Ê±ÖÓ
-	krnl_printer,     //´òÓ¡»ú
-	krnl_UDP,         //Êı¾İ±¨
-	krnl_Client,      //¿Í»§
-	krnl_Server,      //·şÎñÆ÷
-	krnl_SerialPort,  //¶Ë¿Ú
-	krnl_Grid,        //±í¸ñ
-	krnl_DataSrc,     //Êı¾İÔ´
-	krnl_NProvider,   //Í¨ÓÃÌá¹©Õß
-	krnl_DBProvider,  //Êı¾İ¿âÌá¹©Õß
-	krnl_PicBtn,      //Í¼ĞÎ°´Å¥
-	krnl_ODBCDB,      //Íâ²¿Êı¾İ¿â
-	krnl_ODBCProvider,//Íâ²¿Êı¾İÌá¹©Õß
-	krnl_DropTarget,  //ÍÏ·Å¶ÔÏó
+	krnl_window,     //çª—å£
+	krnl_menu,       //èœå•
+	krnl_EditBox,    //ç¼–è¾‘æ¡†
+	krnl_PicBox,     //å›¾ç‰‡æ¡†
+	krnl_ShapeBox,   //å¤–å½¢æ¡†
+	krnl_DrawPanel,  //ç”»æ¿
+	krnl_GroupBox,   //åˆ†ç»„æ¡†
+	krnl_Label,      //æ ‡ç­¾
+	krnl_Button,     //æŒ‰é’®
+	krnl_CheckBox,   //é€‰æ‹©æ¡†
+	krnl_RadioBox,   //å•é€‰æ¡†
+	krnl_ComboBox,   //ç»„åˆæ¡†
+	krnl_ListBox,    //åˆ—è¡¨æ¡†
+	krnl_ChkListBox, //é€‰æ‹©åˆ—è¡¨æ¡†
+	krnl_HScrollBar, //æ¨ªå‘æ»šåŠ¨æ¡
+	krnl_VScrollBar, //çºµå‘æ»šåŠ¨æ¡
+	krnl_ProcessBar, //è¿›åº¦æ¡
+	krnl_SliderBar,  //æ»‘å—æ¡
+	krnl_Tab,        //é€‰æ‹©å¤¹
+	krnl_AnimateBox, //å½±åƒæ¡†
+	krnl_DatePicker, //æ—¥æœŸæ¡†
+	krnl_MonthCalendar,  //æœˆå†
+	krnl_DriverBox,  //é©±åŠ¨å™¨æ¡†
+	krnl_DirBox,     //ç›®å½•æ¡†
+	krnl_FileBox,    //æ–‡ä»¶æ¡†
+	krnl_ColorPicker, //é¢œè‰²é€‰æ‹©å™¨
+	krnl_HyperLinker, //è¶…çº§é“¾æ¥å™¨
+	krnl_Spin,        //è°ƒèŠ‚å™¨
+	krnl_CommonDlg,   //é€šç”¨å¯¹è¯æ¡†
+	krnl_Timer,       //æ—¶é’Ÿ
+	krnl_printer,     //æ‰“å°æœº
+	krnl_UDP,         //æ•°æ®æŠ¥
+	krnl_Client,      //å®¢æˆ·
+	krnl_Server,      //æœåŠ¡å™¨
+	krnl_SerialPort,  //ç«¯å£
+	krnl_Grid,        //è¡¨æ ¼
+	krnl_DataSrc,     //æ•°æ®æº
+	krnl_NProvider,   //é€šç”¨æä¾›è€…
+	krnl_DBProvider,  //æ•°æ®åº“æä¾›è€…
+	krnl_PicBtn,      //å›¾å½¢æŒ‰é’®
+	krnl_ODBCDB,      //å¤–éƒ¨æ•°æ®åº“
+	krnl_ODBCProvider,//å¤–éƒ¨æ•°æ®æä¾›è€…
+	krnl_DropTarget,  //æ‹–æ”¾å¯¹è±¡
 
 
 	iext2_CartoonBox,

@@ -1,4 +1,4 @@
-#include "EAppControlXref.h"
+ï»¿#include "EAppControlXref.h"
 #include "../Utils/Strings.h"
 #include <hexrays.hpp>
 #include <ua.hpp>
@@ -16,8 +16,8 @@ EAppControlXref::EAppControlXref(ESymbol& s):symbolTable(s)
 
 void EAppControlXref::RegisterAction(void* owner)
 {
-	//×¢²á´°¿Ú²Ëµ¥
-	std::string menuName = LocalCpToUtf8("¿Ø¼ş½»²æÒıÓÃ");
+	//æ³¨å†Œçª—å£èœå•
+	std::string menuName = LocalCpToUtf8("æ§ä»¶äº¤å‰å¼•ç”¨");
 	const action_desc_t tmpXrefDesc = {
 	sizeof(action_desc_t),ACTION_EAPP_CONTROL_XREF,menuName.c_str(),this,
 	owner,nullptr,nullptr,0,ADF_OT_PLUGMOD };
@@ -100,14 +100,14 @@ int EAppControlXref::activate(action_activation_ctx_t* ctx)
 		return 0;
 	}
 
-	//±éÀúµÃµ½ËùÓĞµÄÒıÓÃ
+	//éå†å¾—åˆ°æ‰€æœ‰çš„å¼•ç”¨
 	std::vector<unsigned int> cRefList = IDAWrapper::getAllCodeXrefAddr(symbolTable.krnlJmp.Jmp_MWriteProperty);
 	eAppControlXrefData tmpXrefData;
 	for (unsigned int n = 0; n < cRefList.size(); ++n) {
 		if (getRWXrefAddrText(cRefList[n],tmpXrefData.text)) {
 			tmpXrefData.type = XrefWriteProperty;
 			tmpXrefData.xRefAddr = cRefList[n];
-			tmpXrefData.text = "Ğ´ÊôĞÔ_" + tmpXrefData.text;
+			tmpXrefData.text = "å†™å±æ€§_" + tmpXrefData.text;
 			allXrefData.push_back(tmpXrefData);
 		}
 	}
@@ -117,7 +117,7 @@ int EAppControlXref::activate(action_activation_ctx_t* ctx)
 		if (getRWXrefAddrText(cRefList[n], tmpXrefData.text)) {
 			tmpXrefData.type = XrefReadProperty;
 			tmpXrefData.xRefAddr = cRefList[n];
-			tmpXrefData.text = "¶ÁÊôĞÔ_" + tmpXrefData.text;
+			tmpXrefData.text = "è¯»å±æ€§_" + tmpXrefData.text;
 			allXrefData.push_back(tmpXrefData);
 		}
 	}
@@ -187,7 +187,7 @@ bool EAppControlXref::getExecuteXrefAddrText(unsigned int XrefAddr, std::string&
 	qstring funcName;
 	get_ea_name(&funcName, controlIns.ops[1].value);
 	outText.assign(funcName.c_str(),funcName.length());
-	//³¢ÊÔÈ¥³ıÀàÃû
+	//å°è¯•å»é™¤ç±»å
 	int iIndex = outText.find('.');
 	if (iIndex != -1) {
 		outText = outText.substr(iIndex + 1);
@@ -248,12 +248,8 @@ void EAppControlXref::showXrefList()
 			}
 
 			cols[2].sprnt("%08X", xRefList[n].xRefAddr);
-			if (xRefList[n].type == XrefExecute) {
-				cols[3] = qstring(xRefList[n].text.c_str());
-			}
-			else {
-				acp_utf8(&cols[3], xRefList[n].text.c_str());
-			}
+			// å­˜å‚¨å±‚å·²ç»Ÿä¸€ä¸º UTF-8, ç›´é€šæ˜¾ç¤º
+			cols[3] = xRefList[n].text.c_str();
 		}
 		size_t idaapi get_count(void) const
 		{
@@ -262,8 +258,7 @@ void EAppControlXref::showXrefList()
 	};
 
 	std::string xRefListTitle = "xref to " + this->currentAppControl->controlName;
-	qstring utf8Title;
-	acp_utf8(&utf8Title,xRefListTitle.c_str());
+	qstring utf8Title(xRefListTitle.c_str());
 	std::sort(allXrefData.begin(), allXrefData.end(), [](eAppControlXrefData& v1, eAppControlXrefData& v2) {
 		return v1.xRefAddr < v2.xRefAddr;
 		});

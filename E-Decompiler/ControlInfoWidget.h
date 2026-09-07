@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <QtWidgets/QtWidgets>
 #include "ui_ControlInfoWidget.h"
 

@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//¸ß¼¶Ó°Ïñ¿ò
+//é«˜çº§å½±åƒæ¡†
 
 struct CIext2_SuperAnimateBox :public EAppControl
 {

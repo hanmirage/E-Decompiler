@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <string>
 #include <vector>
 
@@ -9,10 +9,10 @@ unsigned char ReadUChar(char* pBuf);
 std::string ReadStr(unsigned char* pBuf);
 
 
-//ʮ����ʮ,a -> 10
+//十六到十,a -> 10
 unsigned char HexToBin(unsigned char HexCode);
 
-//ö��Ŀ¼�ļ�
+//枚举目录文件
 
 std::vector<std::string> enumDirectoryFiles(const char *dir);
 

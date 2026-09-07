@@ -1,7 +1,7 @@
-#pragma once
+﻿#pragma once
 #include "EAppControl.h"
 
-//��ǩ
+//标签
 
 struct CKrnl_Label :public EAppControl
 {

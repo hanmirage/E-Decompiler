@@ -1,17 +1,17 @@
-#pragma once
+ï»¿#pragma once
 #include <pro.h>
 #include <kernwin.hpp>
 
-//ÖÆ×÷Ò×ÓïÑÔº¯ÊıÌØÕ÷
+//åˆ¶ä½œæ˜“è¯­è¨€å‡½æ•°ç‰¹å¾
 
 class ESymbol;
 class ECSigMaker:public action_handler_t
 {
 public:
 	ECSigMaker(ESymbol& symbol);
-	//×¢²áHandler
+	//æ³¨å†ŒHandler
 	void RegisterAction(void* owner);
-	//Ìí¼Ó²Ëµ¥Ïî
+	//æ·»åŠ èœå•é¡¹
 	void AttachToPopupMenu(TWidget* view, TPopupMenu* p);
 private:
 	int activate(action_activation_ctx_t* ctx)override;

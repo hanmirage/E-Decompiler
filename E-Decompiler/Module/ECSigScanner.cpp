@@ -1,4 +1,4 @@
-#include "ECSigScanner.h"
+ï»¿#include "ECSigScanner.h"
 #include <string>
 #include <map>
 #include <pro.h>
@@ -16,7 +16,7 @@
 
 ECSigScanner gECSigScanner;
 
-//ÊÇ·ñÎªÒ×ÓïÑÔ±ê×¼º¯Êı
+//æ˜¯å¦ä¸ºæ˜“è¯­è¨€æ ‡å‡†å‡½æ•°
 
 bool isEStandardFunction(unsigned int startAddr)
 {
@@ -27,7 +27,7 @@ bool isEStandardFunction(unsigned int startAddr)
 	return false;
 }
 
-//³õÊ¼»¯ÌØÕ÷¿â
+//åˆå§‹åŒ–ç‰¹å¾åº“
 
 void initMSigMap(std::multimap<std::string, std::string>& sigMap)
 {
@@ -70,7 +70,7 @@ bool ECSigScanner::ScanECSigFunction(ESymbol* symbolTable)
 	std::multimap<std::string, std::string> map_MSig;
 	initMSigMap(map_MSig);
 
-	//Ã»ÌØÕ÷¿â¾Í²»ÓÃÊ¶±ğÌØÕ÷ÁË
+	//æ²¡ç‰¹å¾åº“å°±ä¸ç”¨è¯†åˆ«ç‰¹å¾äº†
 	if (!map_MSig.size()) {
 		return true;
 	}
@@ -104,7 +104,7 @@ std::string ECSigScanner::calFunctionMD5(unsigned int funcStartEA, bool bUseCach
 		}
 	}
 	
-	//¼ÇÂ¼º¯ÊıË³Ğò
+	//è®°å½•å‡½æ•°é¡ºåº
 	funcIndexMap[funcStartEA] = funcIndex++;
 
 	std::string retMD5;
@@ -118,7 +118,7 @@ std::string ECSigScanner::calFunctionMD5(unsigned int funcStartEA, bool bUseCach
 	this->currentEA = funcStartEA;
 	this->endEA = funcEndEA;
 	
-	//¿ªÊ¼´¦ÀíÊı¾İ
+	//å¼€å§‹å¤„ç†æ•°æ®
 	bool bFinish = false;
 	insn_t tmpIns;
 	do
@@ -140,7 +140,7 @@ std::string ECSigScanner::calFunctionMD5(unsigned int funcStartEA, bool bUseCach
 	return retMD5;
 }
 
-//ÏÈ¿´¿´idaÄ¬ÈÏµÄº¯ÊıÎ²²¿µÄÇé¿ö
+//å…ˆçœ‹çœ‹idaé»˜è®¤çš„å‡½æ•°å°¾éƒ¨çš„æƒ…å†µ
 
 unsigned int checkIDAEndAddr(unsigned int endEA)
 {
@@ -153,7 +153,7 @@ unsigned int checkIDAEndAddr(unsigned int endEA)
 	if (popInsAddr == -1) {
 		return -1;
 	}
-	//±ØĞëÊÇpop ebp
+	//å¿…é¡»æ˜¯pop ebp
 	if (tmpIns.itype != NN_pop || tmpIns.ops[0].reg != 5) {
 		return -1;
 	}
@@ -161,7 +161,7 @@ unsigned int checkIDAEndAddr(unsigned int endEA)
 	if (movInsAddr == -1) {
 		return -1;
 	}
-	//±ØĞëÊÇmov esp,ebp
+	//å¿…é¡»æ˜¯mov esp,ebp
 	if (tmpIns.itype != NN_mov || tmpIns.ops[0].reg != 4 || tmpIns.ops[1].reg != 5) {
 		return -1;
 	}
@@ -178,7 +178,7 @@ unsigned int ECSigScanner::guessFuncEndAddr(unsigned int funcAddr)
 	if (retAddr != -1) {
 		return retAddr;
 	}
-	//ÕÒ¸ö¿¿Æ×µÄµØÖ·
+	//æ‰¾ä¸ªé è°±çš„åœ°å€
 	segment_t* pSegment = getseg(pFunc->start_ea);
 	if (!pSegment) {
 		return BADADDR;
@@ -189,7 +189,7 @@ unsigned int ECSigScanner::guessFuncEndAddr(unsigned int funcAddr)
 	unsigned int startAddr = pFunc->start_ea;
 	unsigned int maxEndAddr = pFunc->end_ea + 0x10;
 	while (true) {
-		unsigned int searchAddr = bin_search2(startAddr, pSegment->end_ea, binPat, 0x0);
+		unsigned int searchAddr = bin_search(startAddr, pSegment->end_ea, binPat, 0x0);
 		if (searchAddr == BADADDR) {
 			continue;
 		}

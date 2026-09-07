@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <ida.hpp>
 #include <windows.h>
 #include <funcs.hpp>
@@ -11,10 +11,10 @@ public:
 	qvector<TrieTreeNode*> SpecialNodes;
 	TrieTreeNode** ChildNodes;
 
-	uint32 SpecialType;	//Ò»¸öÊı×Ö´ú±íÀàĞÍ
-	char* EsigText;		//Ò»¶ÎÎÄ×Ö´ú±íÊı¾İ
-	char* FuncName;		//º¯ÊıÃû³Æ
-	bool IsMatched;     //ÊÇ·ñÒÑ¾­Æ¥Åä¹ı
+	uint32 SpecialType;	//ä¸€ä¸ªæ•°å­—ä»£è¡¨ç±»å‹
+	char* EsigText;		//ä¸€æ®µæ–‡å­—ä»£è¡¨æ•°æ®
+	char* FuncName;		//å‡½æ•°åç§°
+	bool IsMatched;     //æ˜¯å¦å·²ç»åŒ¹é…è¿‡
 };
 
 class TrieTree
@@ -23,21 +23,21 @@ public:
 	TrieTree();
 	~TrieTree();
 
-	//ÈÕÖ¾,´òÓ¡×Óº¯Êı½á¹û
+	//æ—¥å¿—,æ‰“å°å­å‡½æ•°ç»“æœ
 	void Log_PrintSubFunc();
-	//¼ÓÔØÌØÕ÷Âë
+	//åŠ è½½ç‰¹å¾ç 
 	bool LoadSig(const char* lpMapPath);
-	//Ö´ĞĞº¯ÊıÆ¥Åä
+	//æ‰§è¡Œå‡½æ•°åŒ¹é…
 	char* MatchFunc(unsigned char* CodeSrc);
 private:
-	//Ôö¼ÓÆÕÍ¨½Úµã
+	//å¢åŠ æ™®é€šèŠ‚ç‚¹
 	TrieTreeNode* AddNode(TrieTreeNode* p, qstring Txt);
-	//Ôö¼ÓÌØÊâ½Úµã
+	//å¢åŠ ç‰¹æ®ŠèŠ‚ç‚¹
 	TrieTreeNode* AddSpecialNode(TrieTreeNode* p, uint type, qstring Txt);
 
-	//¿ìËÙÆ¥ÅäÌØÕ÷Âë
+	//å¿«é€ŸåŒ¹é…ç‰¹å¾ç 
 	bool FastMatch(TrieTreeNode* p, unsigned char*& FuncSrc);
-	//ÂıËÙÆ¥ÅäÌØÕ÷Âë
+	//æ…¢é€ŸåŒ¹é…ç‰¹å¾ç 
 	bool SlowMatch(unsigned char* FuncSrc, qstring& FuncTxt);
 
 	bool SlowMatch_CmpCallApi(unsigned char* pSrc, qstring IATEAT);
@@ -45,7 +45,7 @@ private:
 public:
 	qvector<char*>  MemAllocSave;
 
-	//ĞŞ¸Äº¯ÊıµÄÃû³Æ
+	//ä¿®æ”¹å‡½æ•°çš„åç§°
 	bool m_IsSetName;
 	bool m_IsAligned;
 	bool m_IsAllMem;
@@ -66,13 +66,13 @@ private:
 		NODE_RIGHTPASS = 12,       //       ?
 		NODE_ALLPASS = 13          //      ??
 	};
-	//¸ù½Úµã
+	//æ ¹èŠ‚ç‚¹
 	TrieTreeNode* root;
 	//func_t* func;
 
-	//×Óº¯Êı,º¯ÊıÃû³ÆºÍº¯ÊıÎÄ±¾Ò»Ò»Ó³Éä
+	//å­å‡½æ•°,å‡½æ•°åç§°å’Œå‡½æ•°æ–‡æœ¬ä¸€ä¸€æ˜ å°„
 	std::map<qstring, qstring> m_subFunc;	
 
-	 //R´ú±íRuntime,ÔËĞĞÊ±¼ÇÂ¼Êµ¼ÊµØÖ·¶ÔÓ¦º¯Êı,²»ÒªÊÔÍ¼Ò»¸öµØÖ·¶à¸öº¯ÊıÃû³Æ ,²ÎÊıÒ»ÎªÊµ¼ÊÄÚ´æµØÖ·,²ÎÊı¶şÎª¶ÔÓ¦Ãû³Æ
+	 //Rä»£è¡¨Runtime,è¿è¡Œæ—¶è®°å½•å®é™…åœ°å€å¯¹åº”å‡½æ•°,ä¸è¦è¯•å›¾ä¸€ä¸ªåœ°å€å¤šä¸ªå‡½æ•°åç§° ,å‚æ•°ä¸€ä¸ºå®é™…å†…å­˜åœ°å€,å‚æ•°äºŒä¸ºå¯¹åº”åç§°
 	std::map<uint32, qstring> m_RFunc; 
 };

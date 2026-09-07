@@ -1,4 +1,4 @@
-#include "CKrnl_PicBox.h"
+ï»¿#include "CKrnl_PicBox.h"
 
 CKrnl_PicBox::CKrnl_PicBox()
 {
@@ -16,28 +16,28 @@ std::string CKrnl_PicBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case -1:
-		ret = "Êó±ê×ó¼ü±»°´ÏÂ";
+		ret = "é¼ æ ‡å·¦é”®è¢«æŒ‰ä¸‹";
 		break;
 	case -2:
-		ret = "Êó±ê×ó¼ü±»·Å¿ª";
+		ret = "é¼ æ ‡å·¦é”®è¢«æ”¾å¼€";
 		break;
 	case -3:
-		ret = "±»Ë«»÷";
+		ret = "è¢«åŒå‡»";
 		break;
 	case -4:
-		ret = "Êó±êÓÒ¼ü±»°´ÏÂ";
+		ret = "é¼ æ ‡å³é”®è¢«æŒ‰ä¸‹";
 		break;
 	case -5:
-		ret = "Êó±êÓÒ¼ü±»·Å¿ª";
+		ret = "é¼ æ ‡å³é”®è¢«æ”¾å¼€";
 		break;
 	case -6:
-		ret = "Êó±êÎ»ÖÃ±»ÒÆ¶¯";
+		ret = "é¼ æ ‡ä½ç½®è¢«ç§»åŠ¨";
 		break;
 	case -12:
-		ret = "¹öÂÖ±»¹ö¶¯";
+		ret = "æ»šè½®è¢«æ»šåŠ¨";
 		break;
 	default:
-		ret = "Î´ÖªÊÂ¼ş";
+		ret = "æœªçŸ¥äº‹ä»¶";
 		break;
 	}
 
@@ -54,35 +54,35 @@ std::string CKrnl_PicBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 9:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 10:
-		return "Í¼Æ¬";
+		return "å›¾ç‰‡";
 	case 11:
-		return "ÏÔÊ¾·½Ê½";
+		return "æ˜¾ç¤ºæ–¹å¼";
 	case 12:
-		return "²¥·Å¶¯»­";
+		return "æ’­æ”¾åŠ¨ç”»";
 	case 13:
-		return "Êı¾İÔ´";
+		return "æ•°æ®æº";
 	case 14:
-		return "Êı¾İÁĞ";
+		return "æ•°æ®åˆ—";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

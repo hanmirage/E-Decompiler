@@ -1,4 +1,4 @@
-#include "CIext2_SplitterBar.h"
+ï»¿#include "CIext2_SplitterBar.h"
 
 CIext2_SplitterBar::CIext2_SplitterBar()
 {
@@ -15,7 +15,7 @@ std::string CIext2_SplitterBar::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "±»ÍÏ¶¯";
+		return "è¢«æ‹–åŠ¨";
 	default:
 		break;
 	}
@@ -32,26 +32,26 @@ std::string CIext2_SplitterBar::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 9:
-		return "·½Ïò";
+		return "æ–¹å‘";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }
 

@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//ºáÏò¹ö¶¯Ìõ
+//æ¨ªå‘æ»šåŠ¨æ¡
 
 struct CKrnl_HScrollBar :public EAppControl
 {

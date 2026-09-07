@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//³¬¼¶±à¼­¿ò
+//è¶…çº§ç¼–è¾‘æ¡†
 
 struct CIext2_RichEdit :public EAppControl
 {

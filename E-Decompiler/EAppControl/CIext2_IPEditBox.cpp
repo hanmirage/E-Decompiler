@@ -1,4 +1,4 @@
-#include "CIext2_IPEditBox.h"
+ï»¿#include "CIext2_IPEditBox.h"
 
 CIext2_IPEditBox::CIext2_IPEditBox()
 {
@@ -15,7 +15,7 @@ std::string CIext2_IPEditBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "µØÖ·±»¸Ä±ä";
+		return "åœ°å€è¢«æ”¹å˜";
 	default:
 		break;
 	}
@@ -32,26 +32,26 @@ std::string CIext2_IPEditBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 9:
-		return "µØÖ·";
+		return "åœ°å€";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }
 

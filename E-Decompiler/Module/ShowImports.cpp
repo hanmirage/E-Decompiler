@@ -1,4 +1,4 @@
-#include "ShowImports.h"
+ï»¿#include "ShowImports.h"
 #include "../ESymbol.h"
 #include <pro.h>
 #include <kernwin.hpp>
@@ -74,8 +74,7 @@ int ShowImports(void* ud)
 		}
 	};
 
-	qstring title;
-	acp_utf8(&title, "ÓÃ»§µ¼Èë±í");
+	qstring title("ç”¨æˆ·å¯¼å…¥è¡¨");
 	chooser_ImportsInfo* pEventWindow = new chooser_ImportsInfo(title.c_str(), symbolTable);
 	pEventWindow->choose();
 	return 0;

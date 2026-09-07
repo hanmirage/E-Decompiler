@@ -1,4 +1,4 @@
-#include "ShowEventList.h"
+﻿#include "ShowEventList.h"
 #include "../ESymbol.h"
 #include <pro.h>
 #include <kernwin.hpp>
@@ -71,13 +71,13 @@ int ShowEventList(void* ud)
 			cols[0].sprnt("0x%08X", controlList[n].windowID);
 			cols[1].sprnt("0x%08X", controlList[n].controlID);
 			cols[2].sprnt("%08X", controlList[n].eventAddr);
-			acp_utf8(&cols[3], controlList[n].controlType.c_str());
-			acp_utf8(&cols[4], controlList[n].eventName.c_str());
+			// 存储层已统一为 UTF-8, 直通显示
+			cols[3] = controlList[n].controlType.c_str();
+			cols[4] = controlList[n].eventName.c_str();
 		}
 	};
 
-	qstring title;
-	acp_utf8(&title,"�ؼ��¼���Ϣ");
+	qstring title("控件事件信息");
 	chooser_EventInfo* pEventWindow = new chooser_EventInfo(title.c_str(),symbolTable);
 	pEventWindow->choose();
 	return 0;

@@ -1,4 +1,4 @@
-#include "TrieTree.h"
+ï»¿#include "TrieTree.h"
 #include <ida.hpp>
 #include <kernwin.hpp>
 #include <diskio.hpp>
@@ -13,7 +13,7 @@ bool FastMatch_CmpApi(unsigned char* pSrc, qstring IATEAT)
 	qstring EATCom;
 
 	int EATpos = IATEAT.find("||");
-	if (EATpos != -1) {            //´æÔÚ×Ô¶¨ÒåEAT
+	if (EATpos != -1) {            //å­˜åœ¨è‡ªå®šä¹‰EAT
 		IATCom = IATEAT.substr(0, EATpos);
 		EATCom = IATEAT.substr(EATpos + 2);
 	}
@@ -83,7 +83,7 @@ bool TrieTree::SlowMatch_CmpCallApi(unsigned char* pSrc,qstring IATEAT)
 	qstring EATCom;
 
 	int EATpos = IATEAT.find("||");
-	if (EATpos != -1) {            //´æÔÚ×Ô¶¨ÒåEAT
+	if (EATpos != -1) {            //å­˜åœ¨è‡ªå®šä¹‰EAT
 		IATCom = IATEAT.substr(0, EATpos);
 		EATCom = IATEAT.substr(EATpos + 2);
 	}
@@ -126,13 +126,13 @@ TrieTree::TrieTree()
 	root = new TrieTreeNode();
 	root->SpecialType = NODE_NORMAL;
 
-	//Ä¬ÈÏÅäÖÃ
+	//é»˜è®¤é…ç½®
 	m_IsAligned = false;
 	m_IsSetName = true;
 	m_MatchSubName = false;
 }
 
-//Ê®Áùµ½Ê®
+//åå…­åˆ°å
 void HexStrToBin(qstring& HexCode, unsigned char* BinCode)
 {
 	for (uint n = 0; n < HexCode.length() / 2; n++) {
@@ -147,31 +147,31 @@ TrieTreeNode* TrieTree::AddNode(TrieTreeNode* p, qstring Txt) {
 		return p->ChildNodes[index];
 	}
 
-	TrieTreeNode* NewNode = new TrieTreeNode(); //Èç¹ûËùÓĞµÄ½ÚµãÖĞ¶¼Ã»ÓĞ,Ôò´´½¨Ò»¸öĞÂ½Úµã
-	p->ChildNodes[index] = NewNode;      //µ±Ç°½Úµã¼ÓÈëĞÂ×Ó½Úµã
+	TrieTreeNode* NewNode = new TrieTreeNode(); //å¦‚æœæ‰€æœ‰çš„èŠ‚ç‚¹ä¸­éƒ½æ²¡æœ‰,åˆ™åˆ›å»ºä¸€ä¸ªæ–°èŠ‚ç‚¹
+	p->ChildNodes[index] = NewNode;      //å½“å‰èŠ‚ç‚¹åŠ å…¥æ–°å­èŠ‚ç‚¹
 
-	NewNode->EsigText = new char[Txt.length() + 1]; qstrncpy(NewNode->EsigText, Txt.c_str(), MAXSTR);//¸³ÖµEsigTxt
+	NewNode->EsigText = new char[Txt.length() + 1]; qstrncpy(NewNode->EsigText, Txt.c_str(), MAXSTR);//èµ‹å€¼EsigTxt
 	MemAllocSave.push_back(NewNode->EsigText);
 	NewNode->SpecialType = NODE_NORMAL;
 	return NewNode;
 }
 
 TrieTreeNode* TrieTree::AddSpecialNode(TrieTreeNode* p, uint type, qstring Txt) {
-	for (int i = 0; i < p->SpecialNodes.size(); i++) {		//±éÀúµ±Ç°×Ó½Úµã
+	for (int i = 0; i < p->SpecialNodes.size(); i++) {		//éå†å½“å‰å­èŠ‚ç‚¹
 		if (p->SpecialNodes[i]->SpecialType == type && Txt == p->SpecialNodes[i]->EsigText) {
 			return p->SpecialNodes[i];
 		}
 	}
-	TrieTreeNode* NewNode = new TrieTreeNode(); //Èç¹ûËùÓĞµÄ½ÚµãÖĞ¶¼Ã»ÓĞ,Ôò´´½¨Ò»¸öĞÂ½Úµã
-	p->SpecialNodes.push_back(NewNode);      //µ±Ç°½Úµã¼ÓÈëĞÂ×Ó½Úµã
-	NewNode->EsigText = new char[Txt.length() + 1]; qstrncpy(NewNode->EsigText, Txt.c_str(), MAXSTR);//¸³ÖµEsigTxt
+	TrieTreeNode* NewNode = new TrieTreeNode(); //å¦‚æœæ‰€æœ‰çš„èŠ‚ç‚¹ä¸­éƒ½æ²¡æœ‰,åˆ™åˆ›å»ºä¸€ä¸ªæ–°èŠ‚ç‚¹
+	p->SpecialNodes.push_back(NewNode);      //å½“å‰èŠ‚ç‚¹åŠ å…¥æ–°å­èŠ‚ç‚¹
+	NewNode->EsigText = new char[Txt.length() + 1]; qstrncpy(NewNode->EsigText, Txt.c_str(), MAXSTR);//èµ‹å€¼EsigTxt
 	MemAllocSave.push_back(NewNode->EsigText);
 	NewNode->SpecialType = type;
 	return NewNode;
 }
 
-bool TrieTree::Insert(qstring& FuncTxt, const qstring& FuncName) {		//²ÎÊıÒ»Îªº¯ÊıµÄÎÄ±¾ĞÎÊ½,²ÎÊı¶şÎªº¯ÊıµÄÃû³Æ
-	TrieTreeNode* p = root;		//½«µ±Ç°½ÚµãÖ¸ÕëÖ¸ÏòROOT½Úµã
+bool TrieTree::Insert(qstring& FuncTxt, const qstring& FuncName) {		//å‚æ•°ä¸€ä¸ºå‡½æ•°çš„æ–‡æœ¬å½¢å¼,å‚æ•°äºŒä¸ºå‡½æ•°çš„åç§°
+	TrieTreeNode* p = root;		//å°†å½“å‰èŠ‚ç‚¹æŒ‡é’ˆæŒ‡å‘ROOTèŠ‚ç‚¹
 
 	qstring BasicTxt;
 	qstring SpecialTxt;
@@ -181,14 +181,14 @@ bool TrieTree::Insert(qstring& FuncTxt, const qstring& FuncName) {		//²ÎÊıÒ»Îªº¯
 		char test = FuncTxt[n];
 		switch (FuncTxt[n])
 		{
-		case '-':	//Check 1´Î
+		case '-':	//Check 1æ¬¡
 			if (FuncTxt[n + 1] == '-' && FuncTxt[n + 2] == '>')
 			{
 				BasicTxt = "E9";
 				p = AddNode(p, BasicTxt);
 				p = AddSpecialNode(p, NODE_LONGJMP, "");
 				n = n + 2;
-				continue;		//´ËcontinueÊôÓÚÍâ²¿Ñ­»·
+				continue;		//æ­¤continueå±äºå¤–éƒ¨å¾ªç¯
 			}
 			return false;
 		case '<':
@@ -201,12 +201,12 @@ bool TrieTree::Insert(qstring& FuncTxt, const qstring& FuncName) {		//²ÎÊıÒ»Îªº¯
 				p = AddNode(p, BasicTxt);
 				BasicTxt = "15";
 				p = AddNode(p, BasicTxt);
-				SpecialTxt = FuncTxt.substr(n + 2, post);   //µÃµ½ÎÄ±¾ÖĞµÄIATº¯Êı
+				SpecialTxt = FuncTxt.substr(n + 2, post);   //å¾—åˆ°æ–‡æœ¬ä¸­çš„IATå‡½æ•°
 				p = AddSpecialNode(p, NODE_CALLAPI, SpecialTxt);
 				n = post + 1;
 				continue;
 			}
-			else {											//ÆÕÍ¨µÄº¯ÊıCALL
+			else {											//æ™®é€šçš„å‡½æ•°CALL
 				int post = FuncTxt.find('>', n);
 				if (post == -1) {
 					return false;
@@ -239,30 +239,30 @@ bool TrieTree::Insert(qstring& FuncTxt, const qstring& FuncName) {		//²ÎÊıÒ»Îªº¯
 			}
 		case '?':
 			if (FuncTxt[n + 1] == '?') {
-				p = AddSpecialNode(p, NODE_ALLPASS, FuncTxt.substr(n, n + 2));	//È«Í¨Åä·û
+				p = AddSpecialNode(p, NODE_ALLPASS, FuncTxt.substr(n, n + 2));	//å…¨é€šé…ç¬¦
 				n = n + 1;
 				continue;
 			}
 			else
 			{
-				p = AddSpecialNode(p, NODE_LEFTPASS, FuncTxt.substr(n, n + 2));	//×óÍ¨Åä·û
+				p = AddSpecialNode(p, NODE_LEFTPASS, FuncTxt.substr(n, n + 2));	//å·¦é€šé…ç¬¦
 				n = n + 1;
 				continue;
 			}
 		case '!':
 		{
-			int post = FuncTxt.find('!', n + 1);	//´Ó!µÄÏÂÒ»¸ö×Ö·û¿ªÊ¼Ñ°ÕÒ!
+			int post = FuncTxt.find('!', n + 1);	//ä»!çš„ä¸‹ä¸€ä¸ªå­—ç¬¦å¼€å§‹å¯»æ‰¾!
 			if (post == -1) {
 				return false;
 			}
 			SpecialTxt = FuncTxt.substr(n + 1, post);
 			p = AddSpecialNode(p, NODE_CONSTANT, SpecialTxt);
-			n = post;	//½«µ±Ç°Ö¸ÕëÖ¸ÏòÓÒ±ßµÄ!ºÅ
+			n = post;	//å°†å½“å‰æŒ‡é’ˆæŒ‡å‘å³è¾¹çš„!å·
 			continue;
 		}
 		default:
 			if (FuncTxt[n + 1] == '?') {
-				p = AddSpecialNode(p, NODE_RIGHTPASS, FuncTxt.substr(n, n + 2));	//ÓÒÍ¨Åä·û
+				p = AddSpecialNode(p, NODE_RIGHTPASS, FuncTxt.substr(n, n + 2));	//å³é€šé…ç¬¦
 				n = n + 1;
 				continue;
 			}
@@ -275,7 +275,7 @@ bool TrieTree::Insert(qstring& FuncTxt, const qstring& FuncName) {		//²ÎÊıÒ»Îªº¯
 		}
 	}
 
-	if (p->FuncName) {		//È·±£º¯ÊıÃû³ÆÎ¨Ò»ĞÔ£¡£¡£¡
+	if (p->FuncName) {		//ç¡®ä¿å‡½æ•°åç§°å”¯ä¸€æ€§ï¼ï¼ï¼
 		msg("Find The same Function--%s", p->FuncName);
 		for (uint i = 0; i < MemAllocSave.size(); i++)
 		{
@@ -296,13 +296,13 @@ TrieTree::~TrieTree()
 		return;
 	}
 
-	qstack<TrieTreeNode*> StackNode;	//½Úµã
+	qstack<TrieTreeNode*> StackNode;	//èŠ‚ç‚¹
 	StackNode.push(p);
 
 	while (!StackNode.empty()) {
 		p = StackNode.top();
 		StackNode.pop();
-		//È¡»Ø¶ÑÕ»¶¥¶Ë½Úµã
+		//å–å›å †æ ˆé¡¶ç«¯èŠ‚ç‚¹
 		if (p)
 		{
 			for (uint i = 0; i < 256; i++)
@@ -358,7 +358,7 @@ bool TrieTree::FastMatch(TrieTreeNode* p, unsigned char*& FuncSrc)
 	{
 		unsigned char* pCallSrc = FuncSrc - 1 + ReadInt(FuncSrc) + 5;
 		uint32 oaddr = SectionManager::VirtualAddrToLinearAddr(pCallSrc);
-		if (m_RFunc[oaddr] == p->EsigText)	//´Ëº¯ÊıÒÑ¾­Æ¥Åä¹ıÒ»´Î
+		if (m_RFunc[oaddr] == p->EsigText)	//æ­¤å‡½æ•°å·²ç»åŒ¹é…è¿‡ä¸€æ¬¡
 		{
 			FuncSrc = FuncSrc + 4;
 			return true;
@@ -424,7 +424,7 @@ bool TrieTree::FastMatch(TrieTreeNode* p, unsigned char*& FuncSrc)
 
 bool TrieTree::SlowMatch(unsigned char* FuncSrc, qstring& FuncTxt)
 {
-	unsigned char* pSrc = FuncSrc;  //³õÊ¼»¯º¯Êı´úÂëÖ¸Õë
+	unsigned char* pSrc = FuncSrc;  //åˆå§‹åŒ–å‡½æ•°ä»£ç æŒ‡é’ˆ
 	if (FuncTxt == "")
 	{
 		return false;
@@ -436,7 +436,7 @@ bool TrieTree::SlowMatch(unsigned char* FuncSrc, qstring& FuncTxt)
 		switch (FuncTxt[n]) {
 		case '-':
 		{
-			if (FuncTxt[n + 1] == '-' && FuncTxt[n + 2] == '>') {		//³¤Ìø×ª
+			if (FuncTxt[n + 1] == '-' && FuncTxt[n + 2] == '>') {		//é•¿è·³è½¬
 				if (*pSrc != 0xE9) {
 					return false;
 				}
@@ -504,12 +504,12 @@ bool TrieTree::SlowMatch(unsigned char* FuncSrc, qstring& FuncTxt)
 		}
 		case '?':
 		{
-			if (FuncTxt[n + 1] == '?') {	                                  //È«Í¨Åä·û
+			if (FuncTxt[n + 1] == '?') {	                                  //å…¨é€šé…ç¬¦
 				pSrc = pSrc + 1;
 				n = n + 2;
 				continue;
 			}
-			else if ((ReadUChar(pSrc) & 0xF) == HexToBin(FuncTxt[n + 1])) {   //×óÍ¨Åä·û
+			else if ((ReadUChar(pSrc) & 0xF) == HexToBin(FuncTxt[n + 1])) {   //å·¦é€šé…ç¬¦
 				pSrc = pSrc + 1;
 				n = n + 2;
 				continue;
@@ -518,7 +518,7 @@ bool TrieTree::SlowMatch(unsigned char* FuncSrc, qstring& FuncTxt)
 		}
 		default:
 		{
-			if (FuncTxt[n + 1] == '?') {                                      //ÓÒÍ¨Åä·û
+			if (FuncTxt[n + 1] == '?') {                                      //å³é€šé…ç¬¦
 				if ((ReadUChar(pSrc) >> 4) == HexToBin(FuncTxt[n])) {
 					pSrc = pSrc + 1;
 					n = n + 2;
@@ -543,22 +543,22 @@ bool TrieTree::SlowMatch(unsigned char* FuncSrc, qstring& FuncTxt)
 
 char* TrieTree::MatchFunc(unsigned char* FuncSrc)
 {
-	TrieTreeNode* p = root;		                //µ±Ç°Ö¸ÕëÖ¸Ïòroot
+	TrieTreeNode* p = root;		                //å½“å‰æŒ‡é’ˆæŒ‡å‘root
 
-	qstack<TrieTreeNode*> StackNode;	        //½Úµã
-	qstack<unsigned char*> StackFuncSrc;        //½ÚµãµØÖ·
+	qstack<TrieTreeNode*> StackNode;	        //èŠ‚ç‚¹
+	qstack<unsigned char*> StackFuncSrc;        //èŠ‚ç‚¹åœ°å€
 
 	StackNode.push(p);
 	StackFuncSrc.push(FuncSrc);
-	//½øÈëÑ­»·³õÊ¼Ìõ¼ş
+	//è¿›å…¥å¾ªç¯åˆå§‹æ¡ä»¶
 
 	while (!StackNode.empty()) {
 		p = StackNode.top();
 		StackNode.pop();
 		FuncSrc = StackFuncSrc.top();
 		StackFuncSrc.pop();
-		//È¡»Ø¶ÑÕ»¶¥¶Ë½Úµã
-		if (!FastMatch(p, FuncSrc)) {		//¼ì²éµ±Ç°½ÚµãºÏ·¨ĞÔÓÅÏÈ¼¶¸ßÓÚÅĞ¶ÏÖÕ½Úµã
+		//å–å›å †æ ˆé¡¶ç«¯èŠ‚ç‚¹
+		if (!FastMatch(p, FuncSrc)) {		//æ£€æŸ¥å½“å‰èŠ‚ç‚¹åˆæ³•æ€§ä¼˜å…ˆçº§é«˜äºåˆ¤æ–­ç»ˆèŠ‚ç‚¹
 			continue;
 		}
 		if (p->FuncName) {
@@ -596,9 +596,9 @@ bool TrieTree::LoadSig(const char* lpMapPath)
 
 	qstring SubFunc = GetMidString(str_Map, "*****SubFunc*****\r\n", "*****SubFunc_End*****", 0);
 
-	int pos = SubFunc.find("\r\n");     //×Óº¯Êı
+	int pos = SubFunc.find("\r\n");     //å­å‡½æ•°
 	while (pos != -1) {
-		qstring temp = SubFunc.substr(0, pos);  //µ¥¸ö×Óº¯Êı
+		qstring temp = SubFunc.substr(0, pos);  //å•ä¸ªå­å‡½æ•°
 		if (temp == "")
 		{
 			SubFunc = SubFunc.substr(SubFunc.find("\r\n") + 2);
@@ -620,10 +620,10 @@ bool TrieTree::LoadSig(const char* lpMapPath)
 
 	qstring Func = GetMidString(str_Map, "***Func***\r\n", "***Func_End***", 0);
 
-	pos = Func.find("\r\n");//·Ö¸îÎÄ±¾
+	pos = Func.find("\r\n");//åˆ†å‰²æ–‡æœ¬
 	while (pos != -1) {
-		qstring temp = Func.substr(0, pos);    //È¡³öµ¥¸öº¯ÊıÎÄ±¾
-		if (temp == "")		//µÃµ½¿ÕĞĞ
+		qstring temp = Func.substr(0, pos);    //å–å‡ºå•ä¸ªå‡½æ•°æ–‡æœ¬
+		if (temp == "")		//å¾—åˆ°ç©ºè¡Œ
 		{
 			Func = Func.substr(Func.find("\r\n") + 2);
 			pos = Func.find("\r\n");
@@ -638,7 +638,7 @@ bool TrieTree::LoadSig(const char* lpMapPath)
 			tempos = temp.find(':', tempos + 2);
 		}
 		if (!Insert(temp.substr(tempos + 1), temp.substr(0, tempos))) {
-			msg("²åÈëº¯ÊıÊ§°Ü\r\n");
+			msg("æ’å…¥å‡½æ•°å¤±è´¥\r\n");
 		}
 		Func = Func.substr(pos + 2);
 		pos = Func.find("\r\n");

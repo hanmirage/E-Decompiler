@@ -1,4 +1,4 @@
-#include "IDAMenu.h"
+﻿#include "IDAMenu.h"
 #include <loader.hpp>
 
 IDAMenu::IDAMenu(const char* menuPath, int (*callback)(void*), void* ud,const char* shortcut, const char* tooltip, int icon)

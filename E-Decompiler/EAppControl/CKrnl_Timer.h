@@ -1,7 +1,7 @@
-#pragma once
+﻿#pragma once
 #include "EAppControl.h"
 
-//ʱ��
+//时钟
 
 struct CKrnl_Timer :public EAppControl
 {

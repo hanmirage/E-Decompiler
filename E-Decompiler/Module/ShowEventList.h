@@ -1,5 +1,5 @@
-#pragma once
+﻿#pragma once
 
-//չʾ�ؼ��¼��б�
+//展示控件事件列表
 
 int ShowEventList(void* ud);

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 #include <map>
 #include <vector>
@@ -29,37 +29,37 @@ public:
 	static ECSigScanner& Instance();
 public:
 	bool ScanECSigFunction(ESymbol* s);
-	//»ñÈ¡º¯ÊıµÄMD5,bFuzzy±íÊ¾ÊÇ·ñÎªÄ£ºıÌØÕ÷
+	//è·å–å‡½æ•°çš„MD5,bFuzzyè¡¨ç¤ºæ˜¯å¦ä¸ºæ¨¡ç³Šç‰¹å¾
 	std::string GetFunctionMD5(unsigned int funcAddr, bool bFuzzy = false);
 private:
-	//bUseCache±íÊ¾ÊÇ·ñÊ¹ÓÃ»º´æ,bSubFunc±íÊ¾ÊÇ·ñÎª×Óº¯Êı
+	//bUseCacheè¡¨ç¤ºæ˜¯å¦ä½¿ç”¨ç¼“å­˜,bSubFuncè¡¨ç¤ºæ˜¯å¦ä¸ºå­å‡½æ•°
 	std::string calFunctionMD5(unsigned int funcAddr, bool bUseCache = false, bool bSubFunc = false);
-	//²ÂÒ»²Âº¯ÊıµÄ½áÊøµØÖ·
+	//çŒœä¸€çŒœå‡½æ•°çš„ç»“æŸåœ°å€
 	unsigned int guessFuncEndAddr(unsigned int funcAddr);
-	//Éú³ÉÔ­Ê¼Êı¾İÌØÕ÷,·µ»Øtrue±íÊ¾½áÊø½âÎö
+	//ç”ŸæˆåŸå§‹æ•°æ®ç‰¹å¾,è¿”å›trueè¡¨ç¤ºç»“æŸè§£æ
 	bool genSig_rawBinary();
 	bool genSig_main(insn_t& tmpIns, bool bSubFunc);
 
-	//´¦ÀíÁé»îµÄµ¥²Ù×÷ÊıÖ¸Áî,·µ»Øtrue±íÊ¾½áÊø½âÎö
+	//å¤„ç†çµæ´»çš„å•æ“ä½œæ•°æŒ‡ä»¤,è¿”å›trueè¡¨ç¤ºç»“æŸè§£æ
 	bool genSig_flexSingleInst(insn_t& ins);
-	//´¦ÀíÁé»îµÄË«²Ù×÷ÊıÖ¸Áî,·µ»Øtrue±íÊ¾½áÊø½âÎö
+	//å¤„ç†çµæ´»çš„åŒæ“ä½œæ•°æŒ‡ä»¤,è¿”å›trueè¡¨ç¤ºç»“æŸè§£æ
 	bool genSig_flexDoubleInst(insn_t& ins);
 
-	//Éú³ÉÍêÃÀÌØÕ÷
+	//ç”Ÿæˆå®Œç¾ç‰¹å¾
 	void genSig_PerfectOp(op_t& op, SigElement& outSig);
-	//Éú³ÉÄ£ºıÌØÕ÷
+	//ç”Ÿæˆæ¨¡ç³Šç‰¹å¾
 	void genSig_FuzzyOp(op_t& op,SigElement& outSig);
 
 private:
-	//keyÊÇº¯ÊıµØÖ·,valueÊÇº¯ÊıMD5ÌØÕ÷
+	//keyæ˜¯å‡½æ•°åœ°å€,valueæ˜¯å‡½æ•°MD5ç‰¹å¾
 	std::map<unsigned int, std::string> sigCacheMap;
 
-	//keyÊÇº¯ÊıµØÖ·,valueÊÇº¯ÊıË÷Òı
+	//keyæ˜¯å‡½æ•°åœ°å€,valueæ˜¯å‡½æ•°ç´¢å¼•
 	std::map<unsigned int, unsigned int> funcIndexMap;
-	//µ±Ç°º¯ÊıË÷Òı´óĞ¡
+	//å½“å‰å‡½æ•°ç´¢å¼•å¤§å°
 	unsigned int funcIndex;
 
-	//µ±Ç°Éú³É½á¹û
+	//å½“å‰ç”Ÿæˆç»“æœ
 	std::vector<SigElement> sigResult;
 
 

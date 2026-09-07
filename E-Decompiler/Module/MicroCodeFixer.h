@@ -1,6 +1,6 @@
-#pragma once
+ï»¿#pragma once
 
-//Î¢Âë¼¶±ğµÄ´úÂëĞŞ¸´
+//å¾®ç çº§åˆ«çš„ä»£ç ä¿®å¤
 
 
 struct ESymbol;

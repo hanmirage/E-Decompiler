@@ -1,4 +1,4 @@
-#include "ECSigMaker.h"
+ï»¿#include "ECSigMaker.h"
 #include "../Utils/Strings.h"
 #include "ECSigScanner.h"
 #include <funcs.hpp>
@@ -13,8 +13,8 @@ ECSigMaker::ECSigMaker(ESymbol& symbol):eSymbol(symbol)
 
 void ECSigMaker::RegisterAction(void* owner)
 {
-	//×¢²á´°¿Ú²Ëµ¥
-	std::string menuName = LocalCpToUtf8("Éú³ÉÒ×ÓïÑÔº¯ÊıÌØÕ÷");
+	//æ³¨å†Œçª—å£èœå•
+	std::string menuName = LocalCpToUtf8("ç”Ÿæˆæ˜“è¯­è¨€å‡½æ•°ç‰¹å¾");
 	const action_desc_t GenEsigDesc = {
 	sizeof(action_desc_t),ACTION_ECSIGMAKER,menuName.c_str(),this,
 	owner,nullptr,nullptr,0,ADF_OT_PLUGMOD};
