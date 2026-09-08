@@ -1,4 +1,4 @@
-#include "CIext2_SuperAnimateBox.h"
+ï»¿#include "CIext2_SuperAnimateBox.h"
 
 CIext2_SuperAnimateBox::CIext2_SuperAnimateBox()
 {
@@ -25,40 +25,40 @@ std::string CIext2_SuperAnimateBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "²¥·ÅÎ»ÖÃ";
+		return "æ’­æ”¾ä½ç½®";
 	case 9:
-		return "Ó°ÏñÎÄ¼şÃû";
+		return "å½±åƒæ–‡ä»¶å";
 	case 10:
-		return "²¥·ÅËÙ¶È";
+		return "æ’­æ”¾é€Ÿåº¦";
 	case 11:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 12:
-		return "Í¸Ã÷ÑÕÉ«";
+		return "é€æ˜é¢œè‰²";
 	case 13:
-		return "²¥·Å";
+		return "æ’­æ”¾";
 	case 14:
-		return "½ö²¥·ÅÒ»´Î";
+		return "ä»…æ’­æ”¾ä¸€æ¬¡";
 	case 15:
-		return "µ±Ç°Ö¡";
+		return "å½“å‰å¸§";
 	case 16:
-		return "È«²¿Ö¡Êı";
+		return "å…¨éƒ¨å¸§æ•°";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }
 

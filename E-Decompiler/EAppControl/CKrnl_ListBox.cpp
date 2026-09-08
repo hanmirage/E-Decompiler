@@ -1,4 +1,4 @@
-#include "CKrnl_ListBox.h"
+ï»¿#include "CKrnl_ListBox.h"
 
 CKrnl_ListBox::CKrnl_ListBox()
 {
@@ -17,9 +17,9 @@ std::string CKrnl_ListBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "ÁĞ±í¿ò±»Ñ¡Ôñ";
+		return "åˆ—è¡¨æ¡†è¢«é€‰æ‹©";
 	case 1:
-		return "Ë«»÷Ñ¡Ôñ";
+		return "åŒå‡»é€‰æ‹©";
 	default:
 		break;
 	}
@@ -36,49 +36,49 @@ std::string CKrnl_ListBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 9:
-		return "×Ô¶¯ÅÅĞò";
+		return "è‡ªåŠ¨æ’åº";
 	case 10:
-		return "¶àÁĞ";
+		return "å¤šåˆ—";
 	case 11:
-		return "ĞĞ¼ä¾à";
+		return "è¡Œé—´è·";
 	case 12:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 13:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 14:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 15:
-		return "ÔÊĞíÑ¡Ôñ¶àÏî";
+		return "å…è®¸é€‰æ‹©å¤šé¡¹";
 	case 16:
-		return "ÏÖĞĞÑ¡ÖĞÏî";
+		return "ç°è¡Œé€‰ä¸­é¡¹";
 	case 17:
-		return "ÁĞ±íÏîÄ¿";
+		return "åˆ—è¡¨é¡¹ç›®";
 	case 18:
-		return "ÏîÄ¿ÊıÖµ";
+		return "é¡¹ç›®æ•°å€¼";
 	case 19:
-		return "Êı¾İÔ´";
+		return "æ•°æ®æº";
 	case 20:
-		return "Êı¾İÁĞ";
+		return "æ•°æ®åˆ—";
 	case 21:
-		return "³ıÈ¥ÖØ¸´";
+		return "é™¤å»é‡å¤";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

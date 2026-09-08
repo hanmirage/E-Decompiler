@@ -1,4 +1,4 @@
-#include "Strings.h"
+﻿#include "Strings.h"
 #include <windows.h>
 
 std::wstring LocalCpToUtf16(const char* str)

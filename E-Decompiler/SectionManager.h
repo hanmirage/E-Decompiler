@@ -1,24 +1,24 @@
-#pragma once
+ï»¿#pragma once
 #include <pro.h>
 
 struct SegmentInfomation
 {
-	ea_t m_segStart;                   //Çø¶ÎÆğÊ¼µØÖ·
-	uint32 m_segSize;                  //Çø¶Î´óĞ¡
-	qstring m_segName;                 //Çø¶ÎÃû³Æ
-	qvector<unsigned char> m_segData;  //Çø¶ÎÊı¾İ
+	ea_t m_segStart;                   //åŒºæ®µèµ·å§‹åœ°å€
+	uint32 m_segSize;                  //åŒºæ®µå¤§å°
+	qstring m_segName;                 //åŒºæ®µåç§°
+	qvector<unsigned char> m_segData;  //åŒºæ®µæ•°æ®
 };
 
 class SectionManager
 {
 public:
-	//³õÊ¼»¯³ÌĞòÇø¶Î
+	//åˆå§‹åŒ–ç¨‹åºåŒºæ®µ
 	static bool InitSectionManager();
-	//ÏßĞÔµØÖ·×ª»»ÎªĞéÄâµØÖ·
+	//çº¿æ€§åœ°å€è½¬æ¢ä¸ºè™šæ‹Ÿåœ°å€
 	static uint8* LinearAddrToVirtualAddr(ea_t LinerAddr);
-	//ĞéÄâµØÖ·×ª»»ÎªÏßĞÔµØÖ·
+	//è™šæ‹Ÿåœ°å€è½¬æ¢ä¸ºçº¿æ€§åœ°å€
 	static ea_t VirtualAddrToLinearAddr(uint8* pVirtualAddr);
-	//Ñ°ÕÒµØÖ·,²ÎÊıÎªÊ®Áù½øÖÆÌØÕ÷
+	//å¯»æ‰¾åœ°å€,å‚æ•°ä¸ºåå…­è¿›åˆ¶ç‰¹å¾
 	static ea_t SeachBin(qstring HexStr);
 private:
 	static qvector<SegmentInfomation> mVec_segInfo;

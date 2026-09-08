@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 #include <vector>
 
@@ -12,18 +12,18 @@ namespace IDAWrapper{
 
 	const char* idadir(const char* subdir);
 
-	//ÉèÖÃº¯ÊıÃû³Æ
+	//è®¾ç½®å‡½æ•°åç§°
 	void setFuncName(unsigned int addr, const char* funcName, bool bForce = true);
 
 	void msg(const char* format, ...);
 
 	bool apply_cdecl(unsigned int ea, const char* decl, int flags = 0);
 
-	//»ñÈ¡´úÂë½»²æÒıÓÃµØÖ·
+	//è·å–ä»£ç äº¤å‰å¼•ç”¨åœ°å€
 	std::vector<unsigned int> getAllCodeXrefAddr(unsigned int addr);
 
 	bool add_user_stkpnt(unsigned int ea, int delta);
 	
-	//Ã¶¾ÙÖ¸¶¨Ä¿Â¼ÎÄ¼ş
+	//æšä¸¾æŒ‡å®šç›®å½•æ–‡ä»¶
 	std::vector<std::string> enumerate_files(const char* dir, const char* fname);
 }

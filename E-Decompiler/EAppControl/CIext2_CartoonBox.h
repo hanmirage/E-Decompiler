@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//¶¯»­¿ò
+//åŠ¨ç”»æ¡†
 
 struct CIext2_CartoonBox :public EAppControl
 {

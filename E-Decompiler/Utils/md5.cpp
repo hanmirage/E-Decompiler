@@ -1,4 +1,4 @@
-#include "md5.h"
+﻿#include "md5.h"
 
 typedef unsigned int MD5_u32plus;
 typedef struct {

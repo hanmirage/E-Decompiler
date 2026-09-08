@@ -1,4 +1,4 @@
-#include "CKrnl_DropTarget.h"
+ï»¿#include "CKrnl_DropTarget.h"
 
 
 CKrnl_DropTarget::CKrnl_DropTarget()
@@ -17,19 +17,19 @@ std::string CKrnl_DropTarget::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		ret = "µÃµ½ÎÄ±¾";
+		ret = "å¾—åˆ°æ–‡æœ¬";
 		break;
 	case 1:
-		ret = "µÃµ½³¬ÎÄ±¾";
+		ret = "å¾—åˆ°è¶…æ–‡æœ¬";
 		break;
 	case 2:
-		ret = "µÃµ½URL";
+		ret = "å¾—åˆ°URL";
 		break;
 	case 3:
-		ret = "µÃµ½ÎÄ¼þ";
+		ret = "å¾—åˆ°æ–‡ä»¶";
 		break;
 	default:
-		ret = "Î´ÖªÊÂ¼þ";
+		ret = "æœªçŸ¥äº‹ä»¶";
 		break;
 	}
 
@@ -43,5 +43,5 @@ bool CKrnl_DropTarget::InitControlExtraData(unsigned int propertyAddr, unsigned 
 
 std::string CKrnl_DropTarget::GetPropertyName(unsigned int propertyIndex)
 {
-	return "Î´ÖªÊôÐÔ";
+	return "æœªçŸ¥å±žæ€§";
 }

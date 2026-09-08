@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//·Ö¸ôÌõ
+//åˆ†éš”æ¡
 
 struct CIext2_SplitterBar :public EAppControl
 {

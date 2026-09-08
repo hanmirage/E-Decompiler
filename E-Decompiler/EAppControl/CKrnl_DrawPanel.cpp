@@ -1,4 +1,4 @@
-#include "CKrnl_DrawPanel.h"
+ï»¿#include "CKrnl_DrawPanel.h"
 
 CKrnl_DrawPanel::CKrnl_DrawPanel()
 {
@@ -15,7 +15,7 @@ std::string CKrnl_DrawPanel::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "»æ»­";
+		return "ç»˜ç”»";
 	default:
 		break;
 	}
@@ -32,55 +32,55 @@ std::string CKrnl_DrawPanel::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 9:
-		return "»­°å±³¾°É«";
+		return "ç”»æ¿èƒŒæ™¯è‰²";
 	case 10:
-		return "µ×Í¼";
+		return "åº•å›¾";
 	case 11:
-		return "µ×Í¼·½Ê½";
+		return "åº•å›¾æ–¹å¼";
 	case 12:
-		return "×Ô¶¯ÖØ»­";
+		return "è‡ªåŠ¨é‡ç”»";
 	case 13:
-		return "»æ»­µ¥Î»";
+		return "ç»˜ç”»å•ä½";
 	case 14:
-		return "»­±ÊÀàĞÍ";
+		return "ç”»ç¬”ç±»å‹";
 	case 15:
-		return "»­³ö·½Ê½";
+		return "ç”»å‡ºæ–¹å¼";
 	case 16:
-		return "»­±Ê´ÖÏ¸";
+		return "ç”»ç¬”ç²—ç»†";
 	case 17:
-		return "»­±ÊÑÕÉ«";
+		return "ç”»ç¬”é¢œè‰²";
 	case 18:
-		return "Ë¢×ÓÀàĞÍ";
+		return "åˆ·å­ç±»å‹";
 	case 19:
-		return "Ë¢×ÓÑÕÉ«";
+		return "åˆ·å­é¢œè‰²";
 	case 20:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 21:
-		return "ÎÄ±¾±³¾°ÑÕÉ«";
+		return "æ–‡æœ¬èƒŒæ™¯é¢œè‰²";
 	case 22:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 23:
-		return "»­°å¿í¶È";
+		return "ç”»æ¿å®½åº¦";
 	case 24:
-		return "»­°å¸ß¶È";
+		return "ç”»æ¿é«˜åº¦";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

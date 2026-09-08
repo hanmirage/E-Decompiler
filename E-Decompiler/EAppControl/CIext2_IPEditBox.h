@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//IP±à¼­¿ò
+//IPç¼–è¾‘æ¡†
 
 struct CIext2_IPEditBox :public EAppControl
 {

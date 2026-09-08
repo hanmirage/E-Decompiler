@@ -1,4 +1,4 @@
-#include "IDAWrapper.h"
+ï»¿#include "IDAWrapper.h"
 #include <pro.h>
 #include <kernwin.hpp>
 #include <bytes.hpp>
@@ -39,7 +39,7 @@ std::string IDAWrapper::get_shortstring(unsigned int addr)
 		return "";
 	}
 	char buffer[255] = { 0 };
-	//Ã»¶ÁÈ¡µ½ÍêÕûµÄ×Ö½ÚÓ¦¸ÃËãÊÇ´íÎóÁË
+	//æ²¡è¯»å–åˆ°å®Œæ•´çš„å­—èŠ‚åº”è¯¥ç®—æ˜¯é”™è¯¯äº†
 	if (get_bytes(buffer, sizeof(buffer), addr, GMB_READALL, NULL) != sizeof(buffer))
 	{
 		return "";
@@ -61,9 +61,8 @@ void IDAWrapper::setFuncName(unsigned int addr, const char* funcName, bool bForc
 			return;
 		}
 	}
-	qstring newName;
-	acp_utf8(&newName, funcName);
-	set_name(addr, newName.c_str(), SN_NOWARN | SN_FORCE);
+	// è¾“å…¥é¡»ä¸º UTF-8 (IDA 9.4 åŸç”Ÿ); äºŒè¿›åˆ¶/esig ä¸­çš„ GBK æ•°æ®åœ¨è§£æå±‚å…ˆè½¬æ¢
+	set_name(addr, funcName, SN_NOWARN | SN_FORCE);
 }
 
 void IDAWrapper::msg(const char* format, ...)
@@ -116,7 +115,8 @@ std::vector<std::string> IDAWrapper::enumerate_files(const char* dir, const char
 		}
 	};
 	MyFileEnumerator fileEnumFunc(retFileList);
-	enumerate_files2(0, 0, dir, fname, fileEnumFunc);
+	char answer[QMAXPATH];
+	::enumerate_files(answer, sizeof(answer), dir, fname, fileEnumFunc);
 	return retFileList;
 }
 

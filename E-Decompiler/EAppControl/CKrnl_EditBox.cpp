@@ -1,4 +1,4 @@
-#include "CKrnl_EditBox.h"
+ï»¿#include "CKrnl_EditBox.h"
 
 CKrnl_EditBox::CKrnl_EditBox()
 {
@@ -15,9 +15,9 @@ std::string CKrnl_EditBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "ÄÚÈİ±»¸Ä±ä";
+		return "å†…å®¹è¢«æ”¹å˜";
 	case 1:
-		return "µ÷½ÚÅ¥±»°´ÏÂ";
+		return "è°ƒèŠ‚é’®è¢«æŒ‰ä¸‹";
 	default:
 		break;
 	}
@@ -34,63 +34,63 @@ std::string CKrnl_EditBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "ÄÚÈİ";
+		return "å†…å®¹";
 	case 9:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 10:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 11:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 12:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 13:
-		return "Òş²ØÑ¡Ôñ";
+		return "éšè—é€‰æ‹©";
 	case 14:
-		return "×î´óÔÊĞí³¤¶È";
+		return "æœ€å¤§å…è®¸é•¿åº¦";
 	case 15:
-		return "ÊÇ·ñÔÊĞí¶àĞĞ";
+		return "æ˜¯å¦å…è®¸å¤šè¡Œ";
 	case 16:
-		return "¹ö¶¯Ìõ";
+		return "æ»šåŠ¨æ¡";
 	case 17:
-		return "¶ÔÆë·½Ê½";
+		return "å¯¹é½æ–¹å¼";
 	case 18:
-		return "ÊäÈë·½Ê½";
+		return "è¾“å…¥æ–¹å¼";
 	case 19:
-		return "ÃÜÂëÕÚ¸Ç×Ö·û";
+		return "å¯†ç é®ç›–å­—ç¬¦";
 	case 20:
-		return "×ª»»·½Ê½";
+		return "è½¬æ¢æ–¹å¼";
 	case 21:
-		return "µ÷½ÚÆ÷·½Ê½";
+		return "è°ƒèŠ‚å™¨æ–¹å¼";
 	case 22:
-		return "µ÷½ÚÆ÷µ×ÏŞÖµ";
+		return "è°ƒèŠ‚å™¨åº•é™å€¼";
 	case 23:
-		return "µ÷½ÚÆ÷ÉÏÏŞÖµ";
+		return "è°ƒèŠ‚å™¨ä¸Šé™å€¼";
 	case 24:
-		return "ÆğÊ¼Ñ¡ÔñÎ»ÖÃ";
+		return "èµ·å§‹é€‰æ‹©ä½ç½®";
 	case 25:
-		return "±»Ñ¡Ôñ×Ö·ûÊı";
+		return "è¢«é€‰æ‹©å­—ç¬¦æ•°";
 	case 26:
-		return "±»Ñ¡ÔñÎÄ±¾";
+		return "è¢«é€‰æ‹©æ–‡æœ¬";
 	case 27:
-		return "Êı¾İÔ´";
+		return "æ•°æ®æº";
 	case 28:
-		return "Êı¾İÁĞ";
+		return "æ•°æ®åˆ—";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

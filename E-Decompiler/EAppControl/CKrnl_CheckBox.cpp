@@ -1,4 +1,4 @@
-#include "CKrnl_CheckBox.h"
+ï»¿#include "CKrnl_CheckBox.h"
 
 CKrnl_CheckBox::CKrnl_CheckBox()
 {
@@ -15,7 +15,7 @@ std::string CKrnl_CheckBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "±»µ¥»÷";
+		return "è¢«å•å‡»";
 	default:
 		break;
 	}
@@ -32,47 +32,47 @@ std::string CKrnl_CheckBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "Í¼Æ¬";
+		return "å›¾ç‰‡";
 	case 9:
-		return "°´Å¥ĞÎÊ½";
+		return "æŒ‰é’®å½¢å¼";
 	case 10:
-		return "Æ½Ãæ";
+		return "å¹³é¢";
 	case 11:
-		return "±êÌâ";
+		return "æ ‡é¢˜";
 	case 12:
-		return "±êÌâ¾Ó×ó";
+		return "æ ‡é¢˜å±…å·¦";
 	case 13:
-		return "ºáÏò¶ÔÆë·½Ê½";
+		return "æ¨ªå‘å¯¹é½æ–¹å¼";
 	case 14:
-		return "×İÏò¶ÔÆë·½Ê½";
+		return "çºµå‘å¯¹é½æ–¹å¼";
 	case 15:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 16:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 17:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 18:
-		return "Ñ¡ÖĞ";
+		return "é€‰ä¸­";
 	case 19:
-		return "Êı¾İÔ´";
+		return "æ•°æ®æº";
 	case 20:
-		return "Êı¾İÁĞ";
+		return "æ•°æ®åˆ—";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

@@ -1,0 +1,7 @@
+# build output
+build/
+*.aps
+
+# user-specific IDE state
+*.vcxproj.user
+.vs/

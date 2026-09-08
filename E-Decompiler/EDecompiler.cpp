@@ -10,7 +10,24 @@
 #include "./Module/ShowImports.h"
 #include "./Utils/Strings.h"
 
-hexdsp_t* hexdsp = NULL;
+// HEXRAYS_API_MAGIC 的尾数是 hexrays API 版本, 随引擎构建日期变化:
+//   IDA 9.4.0 正式版引擎 (2026-07 之后) = 5
+//   更早的 9.4 build (如 260610)        = 4
+// 版本不匹配时握手会被引擎拒绝, 插件无法加载。
+// 构建时通过 EDEC_HEXRAYS_API_VERSION 指定 (见 CMakeLists.txt)。
+#ifndef EDEC_HEXRAYS_API_VERSION
+#define EDEC_HEXRAYS_API_VERSION 5
+#endif
+
+static bool edec_init_hexrays(int flags = 0)
+{
+	constexpr int64 magic = 0x00DEC0DE00000000LL + EDEC_HEXRAYS_API_VERSION;
+	hexdsp_t* dummy = nullptr;
+	return callui(ui_broadcast, magic, &dummy, flags).i == (magic >> 32);
+}
+
+// Hex-Rays 初始化状态 (定义在文件尾部 init() 附近)
+static bool gHexRaysReady = false;
 
 ssize_t PluginUI_Callback(void* ud, int notification_code, va_list va)
 {
@@ -35,7 +52,7 @@ void EDecompiler::makeFunction(ea_t startAddr, ea_t endAddr)
 	parse_binpat_str(&FuncHeadBin, 0, "55 8B EC", 16);
 	while (true)
 	{
-		startAddr = bin_search2(startAddr, endAddr, FuncHeadBin, 0x0);
+		startAddr = bin_search(startAddr, endAddr, FuncHeadBin, 0x0);
 		if (startAddr == BADADDR)
 		{
 			break;
@@ -80,7 +97,14 @@ EDecompiler::~EDecompiler()
 
 bool idaapi EDecompiler::run(size_t)
 {
-	show_wait_box(LocalCpToUtf8("等待IDA初始化分析完毕").c_str());
+	if (!gHexRaysReady) {
+		gHexRaysReady = edec_init_hexrays();
+	}
+	if (!gHexRaysReady) {
+		msg("[E-Decompiler] Hex-Rays 初始化失败, 反编译修正功能不可用 (详见 IDA9.4-PORT.md)\n");
+		return false;
+	}
+	show_wait_box("等待IDA初始化分析完毕");
 	auto_wait();
 	hide_wait_box();
 	if (!this->InitDecompilerEngine()) {
@@ -104,10 +128,10 @@ bool EDecompiler::InitDecompilerEngine()
 	eControlXref.RegisterAction(this);
 
 	if (eSymbol.allControlList.size() > 0) {
-		gMenu_ShowEventInfo = IDAMenu::CreateMenu(LocalCpToUtf8("易语言/控件事件信息").c_str(), ShowEventList, &eSymbol);
+		gMenu_ShowEventInfo = IDAMenu::CreateMenu("易语言/控件事件信息", ShowEventList, &eSymbol);
 	}
 	if (eSymbol.tmpImportsApiList.size() > 0) {
-		gMenu_ShowGUIInfo = IDAMenu::CreateMenu(LocalCpToUtf8("易语言/用户导入表").c_str(), ShowImports, &eSymbol);
+		gMenu_ShowGUIInfo = IDAMenu::CreateMenu("易语言/用户导入表", ShowImports, &eSymbol);
 	}
 
 	cTreeFixer.Install();
@@ -166,7 +190,7 @@ bool EDecompiler::Parse_EStatic(unsigned int eHeadAddr)
 	eSymbol.userCodeStartAddr = eHead.lpStartCode;
 	eSymbol.userCodeEndAddr = eHeadAddr;
 
-	show_wait_box(LocalCpToUtf8("扫描易语言函数").c_str());
+	show_wait_box("扫描易语言函数");
 	makeFunction(eSymbol.userCodeStartAddr, eSymbol.userCodeEndAddr);
 	auto_wait();
 	hide_wait_box();
@@ -174,12 +198,12 @@ bool EDecompiler::Parse_EStatic(unsigned int eHeadAddr)
 	return eSymbol.LoadEStaticSymbol(eHeadAddr,&eHead);
 }
 
+// Hex-Rays 初始化状态: 扫描期尝试一次, 失败则留待 run() 时重试
 static plugmod_t* idaapi init()
 {
-	// no decompiler
-	if (!init_hexrays_plugin()) {
-		return nullptr;
-	}
+	// 扫描期尝试初始化 hexrays; 失败不放弃加载, 运行期 (run) 会重试,
+	// 这样即使个别环境握手时序异常, 插件菜单/快捷键仍然可用
+	gHexRaysReady = edec_init_hexrays();
 	return new EDecompiler();
 }
 
@@ -198,6 +222,6 @@ plugin_t PLUGIN =
   comment,              // long comment about the plugin
   "fjqisba@sohu.com",   // multiline help about the plugin
   PLUGINNAME,           // the preferred short name of the plugin
-  nullptr,              // the preferred hotkey to run the plugin
+  "Ctrl-Alt-E",         // the preferred hotkey to run the plugin
 };
 

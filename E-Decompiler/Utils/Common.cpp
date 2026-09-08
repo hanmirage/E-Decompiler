@@ -1,4 +1,4 @@
-#include "Common.h"
+﻿#include "Common.h"
 #include <windows.h>
 
 unsigned char BinMap[256] = {

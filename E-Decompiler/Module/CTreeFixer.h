@@ -1,6 +1,6 @@
-#pragma once
+ï»¿#pragma once
 
-//ĞŞ¸´Ò×ÓïÑÔ·´±àÒë½á¹û
+//ä¿®å¤æ˜“è¯­è¨€åç¼–è¯‘ç»“æœ
 
 class ESymbol;
 class CTreeFixer

@@ -1,4 +1,4 @@
-#include "CKrnl_SliderBar.h"
+ï»¿#include "CKrnl_SliderBar.h"
 
 
 CKrnl_SliderBar::CKrnl_SliderBar()
@@ -16,31 +16,31 @@ std::string CKrnl_SliderBar::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "´´½¨Íê±Ï";
+		return "åˆ›å»ºå®Œæ¯•";
 	case 1:
-		return "¿É·ñ±»¹Ø±Õ";
+		return "å¯å¦è¢«å…³é—­";
 	case 2:
-		return "½«±»Ïú»Ù";
+		return "å°†è¢«é”€æ¯";
 	case 3:
-		return "Î»ÖÃ±»¸Ä±ä";
+		return "ä½ç½®è¢«æ”¹å˜";
 	case 4:
-		return "³ß´ç±»¸Ä±ä";
+		return "å°ºå¯¸è¢«æ”¹å˜";
 	case 5:
-		return "±»¼¤»î";
+		return "è¢«æ¿€æ´»";
 	case 6:
-		return "±»È¡Ïû¼¤»î";
+		return "è¢«å–æ¶ˆæ¿€æ´»";
 	case 7:
-		return "¿ÕÏĞ";
+		return "ç©ºé—²";
 	case 8:
-		return "Ê×´Î¼¤»î";
+		return "é¦–æ¬¡æ¿€æ´»";
 	case 9:
-		return "ÍĞÅÌÊÂ¼ş";
+		return "æ‰˜ç›˜äº‹ä»¶";
 	case 10:
-		return "±»ÏÔÊ¾";
+		return "è¢«æ˜¾ç¤º";
 	case 11:
-		return "±»Òş²Ø";
+		return "è¢«éšè—";
 	case 12:
-		return "´°¿Ú¿É·ñ±»¹Ø±Õ";
+		return "çª—å£å¯å¦è¢«å…³é—­";
 	default:
 		break;
 	}
@@ -57,45 +57,45 @@ std::string CKrnl_SliderBar::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 9:
-		return "·½Ïò";
+		return "æ–¹å‘";
 	case 10:
-		return "¿Ì¶ÈÀàĞÍ";
+		return "åˆ»åº¦ç±»å‹";
 	case 11:
-		return "µ¥Î»¿Ì¶ÈÖµ";
+		return "å•ä½åˆ»åº¦å€¼";
 	case 12:
-		return "ÔÊĞíÑ¡Ôñ";
+		return "å…è®¸é€‰æ‹©";
 	case 13:
-		return "Ê×Ñ¡ÔñÎ»ÖÃ";
+		return "é¦–é€‰æ‹©ä½ç½®";
 	case 14:
-		return "Ñ¡Ôñ³¤¶È";
+		return "é€‰æ‹©é•¿åº¦";
 	case 15:
-		return "Ò³¸Ä±äÖµ";
+		return "é¡µæ”¹å˜å€¼";
 	case 16:
-		return "ĞĞ¸Ä±äÖµ";
+		return "è¡Œæ”¹å˜å€¼";
 	case 17:
-		return "×îĞ¡Î»ÖÃ";
+		return "æœ€å°ä½ç½®";
 	case 18:
-		return "×î´óÎ»ÖÃ";
+		return "æœ€å¤§ä½ç½®";
 	case 19:
-		return "Î»ÖÃ";
+		return "ä½ç½®";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

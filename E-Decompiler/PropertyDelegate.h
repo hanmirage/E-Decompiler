@@ -1,16 +1,16 @@
-#pragma once
+ï»¿#pragma once
 #include <QtWidgets/QStyledItemDelegate>
 #include <QVariant>
 
 enum PropertyType_t
 {
-	ui_default = 0,             //Ä¬ÈÏÊý¾Ý
-	ui_LineEditor = 1000,       //ÆÕÍ¨µÄ±à¼­¿ò
-	ui_LineEditor_Disabled,     //½ûÖ¹µÄ±à¼­¿ò
-	ui_LineEditor_ReadOnly,     //Ö»¶ÁµÄ±à¼­¿ò
-	ui_ColorDialog,             //ÑÕÉ«Ñ¡Ôñ¿ò
-	ui_ComboBoxList,            //ÏÂÀ­¿ò
-	ui_ImageBox,                //Í¼Æ¬¿ò
+	ui_default = 0,             //é»˜è®¤æ•°æ®
+	ui_LineEditor = 1000,       //æ™®é€šçš„ç¼–è¾‘æ¡†
+	ui_LineEditor_Disabled,     //ç¦æ­¢çš„ç¼–è¾‘æ¡†
+	ui_LineEditor_ReadOnly,     //åªè¯»çš„ç¼–è¾‘æ¡†
+	ui_ColorDialog,             //é¢œè‰²é€‰æ‹©æ¡†
+	ui_ComboBoxList,            //ä¸‹æ‹‰æ¡†
+	ui_ImageBox,                //å›¾ç‰‡æ¡†
 };
 
 class PropertyDelegate :public QStyledItemDelegate
@@ -57,7 +57,7 @@ public:
 			case ui_ImageBox:
 			{
 				QLabel* ret = new QLabel(parent, Qt::Dialog | Qt::WindowCloseButtonHint);
-				ret->setWindowTitle(QStringLiteral("Í¼Æ¬"));
+				ret->setWindowTitle(QStringLiteral("å›¾ç‰‡"));
 				return ret;
 			}
 			default:
@@ -98,7 +98,7 @@ public:
 			{
 				QImage imageValue = index.model()->data(index, Qt::UserRole).value<QImage>();
 				if (!imageValue.isNull()) {
-					pItem->setText(QStringLiteral("ÓÐÊý¾Ý"));
+					pItem->setText(QStringLiteral("æœ‰æ•°æ®"));
 				}
 				else {
 					pItem->setText(QStringLiteral(""));
@@ -148,7 +148,7 @@ public:
 			{
 			case ui_ImageBox:
 			{
-				//Ê¹Í¼Æ¬Î»ÖÃ¾ÓÖÐ
+				//ä½¿å›¾ç‰‡ä½ç½®å±…ä¸­
 				//QRect centerRect;
 				//centerRect.setLeft((QApplication::desktop()->width() - option.rect.width()) / 2);
 				//centerRect.setTop((QApplication::desktop()->height() - option.rect.top()) / 2);

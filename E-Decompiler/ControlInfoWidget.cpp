@@ -1,4 +1,4 @@
-#include "ControlInfoWidget.h"
+ï»¿#include "ControlInfoWidget.h"
 
 #include <bytes.hpp>
 #include "PropertyDelegate.h"
@@ -10,9 +10,9 @@
 
 QString Control_GetBoolStr(unsigned int value)
 {
-	QString ret = QStringLiteral("Õæ");
+	QString ret = QStringLiteral("çœŸ");
 	if (!value) {
-		ret = QStringLiteral("¼Ù");
+		ret = QStringLiteral("å‡");
 	}
 	return ret;
 }
@@ -25,7 +25,7 @@ ControlInfoWidget::ControlInfoWidget()
 	ui.ControlTable->setSelectionMode(QAbstractItemView::SingleSelection);
 	ui.ControlTable->setSelectionBehavior(QAbstractItemView::SelectItems);
 	ui.ControlTable->setItemDelegate(new PropertyDelegate(ui.ControlTable));
-	ui.ControlTable->setColumnWidth(1, 200);   //ÉèÖÃµÚ¶şÁĞ¿í¶È
+	ui.ControlTable->setColumnWidth(1, 200);   //è®¾ç½®ç¬¬äºŒåˆ—å®½åº¦
 
 	connect(ui.treeWidget, &QTreeWidget::itemClicked, this, [&](QTreeWidgetItem* item, int column) {
 		on_controlClicked(item, column);
@@ -44,8 +44,8 @@ void ControlInfoWidget::on_controlClicked(QTreeWidgetItem* item, int column)
 
 	QTreeWidgetItem* parentItem = item->parent();
 	if (!item->parent()) {
-		//µã»÷µÄÊÇ×îÉÏ²ã½Úµã
-		ui.groupBox->setTitle(QStringLiteral("´°¿Ú"));
+		//ç‚¹å‡»çš„æ˜¯æœ€ä¸Šå±‚èŠ‚ç‚¹
+		ui.groupBox->setTitle(QStringLiteral("çª—å£"));
 	}
 	else {
 		unsigned int controlId = item->data(0, Qt::UserRole).toUInt();
@@ -54,7 +54,7 @@ void ControlInfoWidget::on_controlClicked(QTreeWidgetItem* item, int column)
 		//if (GuiParser::GetControlInfo(controlId, currentControl)) {
 		//	ui.groupBox->setTitle(QString::fromLocal8Bit(currentControl.m_controlTypeName.c_str()));
 			//eSymbol_ControlType controlType = GuiParser::GetControlType(currentControl.m_controlTypeId);
-			//EAppControl::ÏÔÊ¾¿Ø¼şĞÅÏ¢(controlType, currentControl.m_propertyAddr, currentControl.m_propertySize);
+			//EAppControl::æ˜¾ç¤ºæ§ä»¶ä¿¡æ¯(controlType, currentControl.m_propertyAddr, currentControl.m_propertySize);
 		//}
 	}
 

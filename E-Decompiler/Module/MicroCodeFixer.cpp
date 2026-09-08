@@ -1,10 +1,10 @@
-#include "MicrocodeFixer.h"
+ï»¿#include "MicrocodeFixer.h"
 #include "../ESymbol.h"
 #include <hexrays.hpp>
 #include <ua.hpp>
 #include <allins.hpp>
 
-//microcodeĞŞ¸´
+//microcodeä¿®å¤
 
 void microGen_PushDefaultArg(codegen_t& cdg)
 {
@@ -57,7 +57,7 @@ void microFix_PushDefaultArg(mblock_t* blk, minsn_t* ins, ESymbol* symbolTable)
 	return;
 }
 
-//Ã»ÓĞÈË»áÔÚºõÄãÊÇ·ñÊÍ·ÅÄÚ´æ
+//æ²¡æœ‰äººä¼šåœ¨ä¹ä½ æ˜¯å¦é‡Šæ”¾å†…å­˜
 
 void microFix_KrnlFreeMem(mblock_t* blk, minsn_t* ins, ESymbol* symbolTable)
 {

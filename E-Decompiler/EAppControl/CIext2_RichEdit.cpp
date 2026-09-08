@@ -1,4 +1,4 @@
-#include "CIext2_RichEdit.h"
+ï»¿#include "CIext2_RichEdit.h"
 
 CIext2_RichEdit::CIext2_RichEdit()
 {
@@ -15,9 +15,9 @@ std::string CIext2_RichEdit::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "ÄÚÈİ±»¸Ä±ä";
+		return "å†…å®¹è¢«æ”¹å˜";
 	case 1:
-		return "Ñ¡ÔñÇø±»¸Ä±ä";
+		return "é€‰æ‹©åŒºè¢«æ”¹å˜";
 	default:
 		break;
 	}
@@ -34,48 +34,48 @@ std::string CIext2_RichEdit::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "ÄÚÈİ¸ñÊ½";
+		return "å†…å®¹æ ¼å¼";
 	case 9:
-		return "ÄÚÈİ";
+		return "å†…å®¹";
 	case 10:
-		return "±ß¿ò";
+		return "è¾¹æ¡†";
 	case 11:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 12:
-		return "ÊÇ·ñÔÊĞí¶àĞĞ";
+		return "æ˜¯å¦å…è®¸å¤šè¡Œ";
 	case 13:
-		return "×Ô¶¯»»ĞĞ";
+		return "è‡ªåŠ¨æ¢è¡Œ";
 	case 14:
-		return "Ö»¶Á";
+		return "åªè¯»";
 	case 15:
-		return "Òş²ØÑ¡Ôñ";
+		return "éšè—é€‰æ‹©";
 	case 16:
-		return "×î´óÔÊĞí³¤¶È";
+		return "æœ€å¤§å…è®¸é•¿åº¦";
 	case 17:
-		return "ÆğÊ¼Ñ¡ÔñÎ»ÖÃ";
+		return "èµ·å§‹é€‰æ‹©ä½ç½®";
 	case 18:
-		return "±»Ñ¡Ôñ×Ö·ûÊı";
+		return "è¢«é€‰æ‹©å­—ç¬¦æ•°";
 	case 19:
-		return "±»Ñ¡ÔñÎÄ±¾";
+		return "è¢«é€‰æ‹©æ–‡æœ¬";
 	case 20:
-		return "ÊÇ·ñÒÑ¸ü¸Ä";
+		return "æ˜¯å¦å·²æ›´æ”¹";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }
 

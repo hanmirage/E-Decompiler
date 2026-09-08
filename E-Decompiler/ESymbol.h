@@ -1,113 +1,113 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 #include <vector>
 #include <map>
 #include <set>
 #include "ELib.h"
 
-//Ò×ÓïÑÔ·ûºÅĞÅÏ¢
+//æ˜“è¯­è¨€ç¬¦å·ä¿¡æ¯
 
 struct EVENT_INFO
 {
-	unsigned int m_lpszName;       //ÊÂ¼şÃû³Æ
-	unsigned int m_lpszExplain;    //ÊÂ¼şÏêÏ¸½âÊÍ
-	unsigned int m_dwState;        //ÊÂ¼şÌØÊâ±êÖ¾
-	int  m_nArgCount;      //ÊÂ¼şµÄ²ÎÊıÊıÄ¿
-	unsigned int m_lpEventArgInfo; //²ÎÊı
+	unsigned int m_lpszName;       //äº‹ä»¶åç§°
+	unsigned int m_lpszExplain;    //äº‹ä»¶è¯¦ç»†è§£é‡Š
+	unsigned int m_dwState;        //äº‹ä»¶ç‰¹æ®Šæ ‡å¿—
+	int  m_nArgCount;      //äº‹ä»¶çš„å‚æ•°æ•°ç›®
+	unsigned int m_lpEventArgInfo; //å‚æ•°
 };
 
 #pragma pack(push,1)
 
 
 
-// ÓÃ×÷¶¨Òå´°¿Úµ¥ÔªÊôĞÔ
+// ç”¨ä½œå®šä¹‰çª—å£å•å…ƒå±æ€§
 struct UNIT_PROPERTY
 {
-	unsigned int m_lpszName;      //ÊôĞÔÃû³Æ
-	unsigned int m_lpszEGName;    //Ó¢ÎÄÃû³Æ
-	unsigned int m_lpszExplain;   //ÊôĞÔ½âÊÍ
-	short  m_shtType;       //ÊôĞÔµÄÊı¾İÀàĞÍ
-	unsigned short m_wState;        //ÊôĞÔµÄÌØÊâ±ê¼Ç
-	unsigned int m_lpszzPickStr;  //±¸Ñ¡ÎÄ±¾
+	unsigned int m_lpszName;      //å±æ€§åç§°
+	unsigned int m_lpszEGName;    //è‹±æ–‡åç§°
+	unsigned int m_lpszExplain;   //å±æ€§è§£é‡Š
+	short  m_shtType;       //å±æ€§çš„æ•°æ®ç±»å‹
+	unsigned short m_wState;        //å±æ€§çš„ç‰¹æ®Šæ ‡è®°
+	unsigned int m_lpszzPickStr;  //å¤‡é€‰æ–‡æœ¬
 };
 
-struct LIB_DATA_TYPE_INFO   //¿â¶¨ÒåÊı¾İÀàĞÍ½á¹¹
+struct LIB_DATA_TYPE_INFO   //åº“å®šä¹‰æ•°æ®ç±»å‹ç»“æ„
 {
-	unsigned int m_lpszName;     //Ãû³Æ
-	unsigned int m_lpszEGName;   //Ó¢ÎÄÃû³Æ,¿ÉÎª¿Õ
-	unsigned int m_szExplain;    //ÏêÏ¸½âÊÍ,¿ÉÎª¿Õ
-	int  m_nCmdCount;    //±¾Êı¾İÀàĞÍ³ÉÔ±·½·¨µÄÊıÄ¿(¿ÉÎª0)
-	unsigned int m_lpnCmdsIndex; //Ö¸ÏòËùÓĞ³ÉÔ±·½·¨ÃüÁîÔÚÖ§³Ö¿âÃüÁî±íÖĞµÄË÷ÒıÖµÖ¸Õë,±àÒëºóÊı¾İ±»Ä¨³ı
-	unsigned int m_dwState;      //Êı¾İÀàĞÍµÄÌØÊâÊôĞÔ
+	unsigned int m_lpszName;     //åç§°
+	unsigned int m_lpszEGName;   //è‹±æ–‡åç§°,å¯ä¸ºç©º
+	unsigned int m_szExplain;    //è¯¦ç»†è§£é‡Š,å¯ä¸ºç©º
+	int  m_nCmdCount;    //æœ¬æ•°æ®ç±»å‹æˆå‘˜æ–¹æ³•çš„æ•°ç›®(å¯ä¸º0)
+	unsigned int m_lpnCmdsIndex; //æŒ‡å‘æ‰€æœ‰æˆå‘˜æ–¹æ³•å‘½ä»¤åœ¨æ”¯æŒåº“å‘½ä»¤è¡¨ä¸­çš„ç´¢å¼•å€¼æŒ‡é’ˆ,ç¼–è¯‘åæ•°æ®è¢«æŠ¹é™¤
+	unsigned int m_dwState;      //æ•°æ®ç±»å‹çš„ç‰¹æ®Šå±æ€§
 
 	 ////////////////////////////////////////////
-	// ÒÔÏÂ³ÉÔ±Ö»ÓĞÔÚÎª´°¿Úµ¥Ôª¡¢²Ëµ¥Ê±²ÅÓĞĞ§¡£
+	// ä»¥ä¸‹æˆå‘˜åªæœ‰åœ¨ä¸ºçª—å£å•å…ƒã€èœå•æ—¶æ‰æœ‰æ•ˆã€‚
 
-	unsigned int m_dwUnitBmpID;     //Ö¸¶¨ÔÚÖ§³Ö¿âÖĞµÄµ¥ÔªÍ¼Ïñ×ÊÔ´ID
-	int  m_nEventCount;     //±¾µ¥ÔªµÄÊÂ¼şÊıÄ¿
-	unsigned int m_lpEventBegin;    //Ö¸Ïòµ¥ÔªµÄËùÓĞÊÂ¼şµÄÖ¸Õë,EVENT_INFO,±àÒëºóÊı¾İ±»Ä¨³ı
-	int m_nPropertyCount;   //±¾µ¥ÔªµÄÊôĞÔÊıÄ¿
-	unsigned int m_lpPropertyBegin; //Ö¸Ïòµ¥ÔªµÄËùÓĞÊôĞÔµÄÖ¸Õë,UNIT_PROPERTY
+	unsigned int m_dwUnitBmpID;     //æŒ‡å®šåœ¨æ”¯æŒåº“ä¸­çš„å•å…ƒå›¾åƒèµ„æºID
+	int  m_nEventCount;     //æœ¬å•å…ƒçš„äº‹ä»¶æ•°ç›®
+	unsigned int m_lpEventBegin;    //æŒ‡å‘å•å…ƒçš„æ‰€æœ‰äº‹ä»¶çš„æŒ‡é’ˆ,EVENT_INFO,ç¼–è¯‘åæ•°æ®è¢«æŠ¹é™¤
+	int m_nPropertyCount;   //æœ¬å•å…ƒçš„å±æ€§æ•°ç›®
+	unsigned int m_lpPropertyBegin; //æŒ‡å‘å•å…ƒçš„æ‰€æœ‰å±æ€§çš„æŒ‡é’ˆ,UNIT_PROPERTY
 
-	unsigned int m_lpfnGetInterface; //ÓÃ×÷Ìá¹©±¾´°¿Úµ¥ÔªµÄËùÓĞ½Ó¿Ú¡£
+	unsigned int m_lpfnGetInterface; //ç”¨ä½œæä¾›æœ¬çª—å£å•å…ƒçš„æ‰€æœ‰æ¥å£ã€‚
 
 	////////////////////////////////////////////
-	// ÒÔÏÂ³ÉÔ±Ö»ÓĞÔÚ²»Îª´°¿Úµ¥Ôª¡¢²Ëµ¥Ê±²ÅÓĞĞ§¡£
+	// ä»¥ä¸‹æˆå‘˜åªæœ‰åœ¨ä¸ä¸ºçª—å£å•å…ƒã€èœå•æ—¶æ‰æœ‰æ•ˆã€‚
 
-	int m_nElementCount;    //±¾Êı¾İÀàĞÍÖĞ×Ó³ÉÔ±µÄÊıÄ¿(¿ÉÎª0)
-	unsigned int m_lpElementBegin;   //Ö¸Ïò×Ó³ÉÔ±Êı×éµÄÊ×µØÖ·,LIB_DATA_TYPE_ELEMENT
+	int m_nElementCount;    //æœ¬æ•°æ®ç±»å‹ä¸­å­æˆå‘˜çš„æ•°ç›®(å¯ä¸º0)
+	unsigned int m_lpElementBegin;   //æŒ‡å‘å­æˆå‘˜æ•°ç»„çš„é¦–åœ°å€,LIB_DATA_TYPE_ELEMENT
 };
 
 struct LIB_INFO
 {
-	unsigned int m_dwLibFormatVer;    //Ö§³Ö¿â¸ñÊ½°æ±¾ºÅ,Ó¦¸ÃÎª0x1312D65
-	unsigned int m_lpGuid;            //¶ÔÓ¦Ö§³Ö¿âµÄGUIDÖ¸Õë¡£
-	int  m_nMajorVersion;     //Ö§³Ö¿âµÄÖ÷°æ±¾ºÅ£¬±ØĞë´óÓÚ0¡£
-	int  m_nMinorVersion;     //Ö§³Ö¿âµÄ´Î°æ±¾ºÅ¡£
-	int  m_nBuildNumber;      //¹¹½¨°æ±¾ºÅ
-	int  m_nRqSysMajorVer;    //ËùĞèÒªÒ×ÓïÑÔÏµÍ³µÄÖ÷°æ±¾ºÅ
-	int  m_nRqSysMinorVer;    //ËùĞèÒªÒ×ÓïÑÔÏµÍ³µÄ´Î°æ±¾ºÅ
-	int  m_nRqSysKrnlLibMajorVer;   //ËùĞèÒªµÄÏµÍ³ºËĞÄÖ§³Ö¿âµÄÖ÷°æ±¾ºÅ
-	int  m_nRqSysKrnlLibMinorVer;   //ËùĞèÒªµÄÏµÍ³ºËĞÄÖ§³Ö¿âµÄ´Î°æ±¾ºÅ
-	unsigned int m_lpName;            //Ö§³Ö¿âÃû³ÆÖ¸Õë
-	int  m_nLanguage;         //Ö§³Ö¿âËùÖ§³ÖµÄÓïÑÔ,Ó¦¸ÃÊÇ1
-	unsigned int m_lpExplain;         //Ö§³Ö¿â½âÊÍÄÚÈİÖ¸Õë,¿ÉÎª¿Õ
-	unsigned int m_dwState;           //Ö§³Ö¿âÌØÊâ×´Ì¬ËµÃ÷
-	unsigned int m_lpszAuthor;        //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszZipCode;       //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszAddress;       //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszPhone;         //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszFax;           //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszEmail;         //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszHomePage;      //×÷ÕßÏà¹ØĞÅÏ¢
-	unsigned int m_lpszOther;         //×÷ÕßÏà¹ØĞÅÏ¢
+	unsigned int m_dwLibFormatVer;    //æ”¯æŒåº“æ ¼å¼ç‰ˆæœ¬å·,åº”è¯¥ä¸º0x1312D65
+	unsigned int m_lpGuid;            //å¯¹åº”æ”¯æŒåº“çš„GUIDæŒ‡é’ˆã€‚
+	int  m_nMajorVersion;     //æ”¯æŒåº“çš„ä¸»ç‰ˆæœ¬å·ï¼Œå¿…é¡»å¤§äº0ã€‚
+	int  m_nMinorVersion;     //æ”¯æŒåº“çš„æ¬¡ç‰ˆæœ¬å·ã€‚
+	int  m_nBuildNumber;      //æ„å»ºç‰ˆæœ¬å·
+	int  m_nRqSysMajorVer;    //æ‰€éœ€è¦æ˜“è¯­è¨€ç³»ç»Ÿçš„ä¸»ç‰ˆæœ¬å·
+	int  m_nRqSysMinorVer;    //æ‰€éœ€è¦æ˜“è¯­è¨€ç³»ç»Ÿçš„æ¬¡ç‰ˆæœ¬å·
+	int  m_nRqSysKrnlLibMajorVer;   //æ‰€éœ€è¦çš„ç³»ç»Ÿæ ¸å¿ƒæ”¯æŒåº“çš„ä¸»ç‰ˆæœ¬å·
+	int  m_nRqSysKrnlLibMinorVer;   //æ‰€éœ€è¦çš„ç³»ç»Ÿæ ¸å¿ƒæ”¯æŒåº“çš„æ¬¡ç‰ˆæœ¬å·
+	unsigned int m_lpName;            //æ”¯æŒåº“åç§°æŒ‡é’ˆ
+	int  m_nLanguage;         //æ”¯æŒåº“æ‰€æ”¯æŒçš„è¯­è¨€,åº”è¯¥æ˜¯1
+	unsigned int m_lpExplain;         //æ”¯æŒåº“è§£é‡Šå†…å®¹æŒ‡é’ˆ,å¯ä¸ºç©º
+	unsigned int m_dwState;           //æ”¯æŒåº“ç‰¹æ®ŠçŠ¶æ€è¯´æ˜
+	unsigned int m_lpszAuthor;        //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszZipCode;       //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszAddress;       //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszPhone;         //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszFax;           //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszEmail;         //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszHomePage;      //ä½œè€…ç›¸å…³ä¿¡æ¯
+	unsigned int m_lpszOther;         //ä½œè€…ç›¸å…³ä¿¡æ¯
 
 //////////////////
-	int m_nDataTypeCount;     //Ö§³Ö¿âÈ«²¿µÄÊı¾İÀàĞÍ¸öÊı
-	unsigned int m_lpDataType;        //Ö¸Ïò³ÌĞòÓÃµ½µÄÊı¾İÀàĞÍĞÅÏ¢µÄÖ¸Õë,LIB_DATA_TYPE_INFO
+	int m_nDataTypeCount;     //æ”¯æŒåº“å…¨éƒ¨çš„æ•°æ®ç±»å‹ä¸ªæ•°
+	unsigned int m_lpDataType;        //æŒ‡å‘ç¨‹åºç”¨åˆ°çš„æ•°æ®ç±»å‹ä¿¡æ¯çš„æŒ‡é’ˆ,LIB_DATA_TYPE_INFO
 
-	int m_nCategoryCount;     //È«¾ÖÃüÁîÀà±ğÊıÄ¿
-	unsigned int m_lpszzCategory;     //È«¾ÖÃüÁîÀà±ğËµÃ÷±í£¬Ã¿ÏîÎªÒ»×Ö·û´®£¬Ç°ËÄÎ»Êı×Ö±íÊ¾Í¼ÏóË÷ÒıºÅ£¨´Ó1¿ªÊ¼£¬0±íÊ¾ÎŞ£©¡£
-								// ¼õÒ»ºóµÄÖµÎªÖ¸ÏòÖ§³Ö¿âÖĞÃûÎª"LIB_BITMAP"µÄBITMAP×ÊÔ´ÖĞÄ³Ò»²¿·Ö16X13Î»Í¼µÄË÷Òı
+	int m_nCategoryCount;     //å…¨å±€å‘½ä»¤ç±»åˆ«æ•°ç›®
+	unsigned int m_lpszzCategory;     //å…¨å±€å‘½ä»¤ç±»åˆ«è¯´æ˜è¡¨ï¼Œæ¯é¡¹ä¸ºä¸€å­—ç¬¦ä¸²ï¼Œå‰å››ä½æ•°å­—è¡¨ç¤ºå›¾è±¡ç´¢å¼•å·ï¼ˆä»1å¼€å§‹ï¼Œ0è¡¨ç¤ºæ— ï¼‰ã€‚
+								// å‡ä¸€åçš„å€¼ä¸ºæŒ‡å‘æ”¯æŒåº“ä¸­åä¸º"LIB_BITMAP"çš„BITMAPèµ„æºä¸­æŸä¸€éƒ¨åˆ†16X13ä½å›¾çš„ç´¢å¼•
 
-	int m_nCmdCount;          //±¾¿âÖĞÌá¹©µÄËùÓĞÃüÁî(È«¾ÖÃüÁî¼°¶ÔÏó·½·¨)µÄÊıÄ¿(ÈçÎŞÔòÎª0)¡£
-	unsigned int m_lpBeginCmdInfo;    //Ö¸ÏòËùÓĞÃüÁî¼°·½·¨µÄ¶¨ÒåĞÅÏ¢Êı×é(Èçm_nCmdCountÎª0,ÔòÎªNULL),CMD_INFO
-	unsigned int m_lpCmdsFunc;        //Ö¸ÏòÃ¿¸öÃüÁîµÄÊµÏÖ´úÂëÊ×µØÖ·£¬(Èçm_nCmdCountÎª0, ÔòÎªNULL)¡£
+	int m_nCmdCount;          //æœ¬åº“ä¸­æä¾›çš„æ‰€æœ‰å‘½ä»¤(å…¨å±€å‘½ä»¤åŠå¯¹è±¡æ–¹æ³•)çš„æ•°ç›®(å¦‚æ— åˆ™ä¸º0)ã€‚
+	unsigned int m_lpBeginCmdInfo;    //æŒ‡å‘æ‰€æœ‰å‘½ä»¤åŠæ–¹æ³•çš„å®šä¹‰ä¿¡æ¯æ•°ç»„(å¦‚m_nCmdCountä¸º0,åˆ™ä¸ºNULL),CMD_INFO
+	unsigned int m_lpCmdsFunc;        //æŒ‡å‘æ¯ä¸ªå‘½ä»¤çš„å®ç°ä»£ç é¦–åœ°å€ï¼Œ(å¦‚m_nCmdCountä¸º0, åˆ™ä¸ºNULL)ã€‚
 
-	unsigned int m_lpfnRunAddInFn;    //¿ÉÎªNULL£¬ÓÃ×÷ÎªÒ×ÓïÑÔIDEÌá¹©¸½¼Ó¹¦ÄÜ
-	unsigned int m_szzAddInFnInfo;    //ÓĞ¹ØAddIn¹¦ÄÜµÄËµÃ÷£¬Á½¸ö×Ö·û´®ËµÃ÷Ò»¸ö¹¦ÄÜ
+	unsigned int m_lpfnRunAddInFn;    //å¯ä¸ºNULLï¼Œç”¨ä½œä¸ºæ˜“è¯­è¨€IDEæä¾›é™„åŠ åŠŸèƒ½
+	unsigned int m_szzAddInFnInfo;    //æœ‰å…³AddInåŠŸèƒ½çš„è¯´æ˜ï¼Œä¸¤ä¸ªå­—ç¬¦ä¸²è¯´æ˜ä¸€ä¸ªåŠŸèƒ½
 
-	unsigned int m_lpfnNotify;        //²»ÄÜÎªNULL£¬Ìá¹©½ÓÊÕÀ´×ÔÒ×ÓïÑÔIDE»òÔËĞĞ»·¾³Í¨ÖªĞÅÏ¢µÄº¯Êı¡£
+	unsigned int m_lpfnNotify;        //ä¸èƒ½ä¸ºNULLï¼Œæä¾›æ¥æ”¶æ¥è‡ªæ˜“è¯­è¨€IDEæˆ–è¿è¡Œç¯å¢ƒé€šçŸ¥ä¿¡æ¯çš„å‡½æ•°ã€‚
 
-	// ³¬¼¶Ä£°åÔİÊ±±£Áô²»ÓÃ¡£
-	unsigned int m_lpfnSuperTemplate;       //Îª¿Õ
-	unsigned int m_lpszzSuperTemplateInfo;  //Îª¿Õ
+	// è¶…çº§æ¨¡æ¿æš‚æ—¶ä¿ç•™ä¸ç”¨ã€‚
+	unsigned int m_lpfnSuperTemplate;       //ä¸ºç©º
+	unsigned int m_lpszzSuperTemplateInfo;  //ä¸ºç©º
 
-	// ±¾¿â¶¨ÒåµÄËùÓĞ³£Á¿¡£
-	int m_nLibConstCount;   //³£Á¿Êı¾İ
-	unsigned int m_lpLibConst;      //Ö¸Ïò³£Á¿¶¨ÒåÊı×éµÄÖ¸Õë
+	// æœ¬åº“å®šä¹‰çš„æ‰€æœ‰å¸¸é‡ã€‚
+	int m_nLibConstCount;   //å¸¸é‡æ•°æ®
+	unsigned int m_lpLibConst;      //æŒ‡å‘å¸¸é‡å®šä¹‰æ•°ç»„çš„æŒ‡é’ˆ
 
-	unsigned int m_lpszzDependFiles; //±¾¿âÕı³£ÔËĞĞËùĞèÒªÒÀÀµµÄÆäËûÎÄ¼ş£¬ÔÚÖÆ×÷°²×°Èí¼şÊ±½«»á×Ô¶¯´øÉÏÕâĞ©ÎÄ¼ş,¿ÉÎª¿Õ
+	unsigned int m_lpszzDependFiles; //æœ¬åº“æ­£å¸¸è¿è¡Œæ‰€éœ€è¦ä¾èµ–çš„å…¶ä»–æ–‡ä»¶ï¼Œåœ¨åˆ¶ä½œå®‰è£…è½¯ä»¶æ—¶å°†ä¼šè‡ªåŠ¨å¸¦ä¸Šè¿™äº›æ–‡ä»¶,å¯ä¸ºç©º
 };
 
 #pragma pack(pop)
@@ -116,90 +116,90 @@ struct LIB_INFO
 
 struct eSymbol_EDataTypeInfo
 {
-	std::string m_Name;  //Êı¾İÀàĞÍÃû³Æ
+	std::string m_Name;  //æ•°æ®ç±»å‹åç§°
 };
 
 struct eSymbol_ELibInfo
 {
-	std::string m_Name;         //Ö§³Ö¿âÃû³Æ
-	std::string m_Guid;         //Ö§³Ö¿âµÄGUID
-	int  m_nMajorVersion;       //Ö§³Ö¿âµÄÖ÷°æ±¾ºÅ£¬±ØĞë´óÓÚ0¡£
-	int  m_nMinorVersion;       //Ö§³Ö¿âµÄ´Î°æ±¾ºÅ¡£
+	std::string m_Name;         //æ”¯æŒåº“åç§°
+	std::string m_Guid;         //æ”¯æŒåº“çš„GUID
+	int  m_nMajorVersion;       //æ”¯æŒåº“çš„ä¸»ç‰ˆæœ¬å·ï¼Œå¿…é¡»å¤§äº0ã€‚
+	int  m_nMinorVersion;       //æ”¯æŒåº“çš„æ¬¡ç‰ˆæœ¬å·ã€‚
 
-	std::vector<eSymbol_EDataTypeInfo> mVec_DataTypeInfo;      //Êı¾İÀàĞÍĞÅÏ¢
+	std::vector<eSymbol_EDataTypeInfo> mVec_DataTypeInfo;      //æ•°æ®ç±»å‹ä¿¡æ¯
 };
 
 struct eSymbol_KrnlCall
 {
-	unsigned int krnl_MReportError;               //´íÎó»Øµ÷
-	unsigned int krnl_MCallDllCmd;                //DLLÃüÁî
-	unsigned int krnl_MCallLibCmd;                //Èı·½Ö§³Ö¿âÃüÁî
-	unsigned int krnl_MCallKrnlLibCmd;            //ºËĞÄÖ§³Ö¿âÃüÁî
-	unsigned int krnl_MReadProperty;              //¶ÁÈ¡×é¼şÊôĞÔ
-	unsigned int krnl_MWriteProperty;             //ÉèÖÃ×é¼şÊôĞÔ
-	unsigned int krnl_MMalloc;                    //·ÖÅäÄÚ´æ
-	unsigned int krnl_MRealloc;                   //ÖØĞÂ·ÖÅäÄÚ´æ
-	unsigned int krnl_MFree;                      //ÊÍ·ÅÄÚ´æ
-	unsigned int krnl_MExitProcess;               //½áÊø
-	unsigned int krnl_MMessageLoop;               //´°¿ÚÏûÏ¢Ñ­»·
-	unsigned int krnl_MLoadBeginWin;              //ÔØÈëÆô¶¯´°¿Ú
-	unsigned int krnl_MOtherHelp;                 //¸¨Öú¹¦ÄÜ
+	unsigned int krnl_MReportError;               //é”™è¯¯å›è°ƒ
+	unsigned int krnl_MCallDllCmd;                //DLLå‘½ä»¤
+	unsigned int krnl_MCallLibCmd;                //ä¸‰æ–¹æ”¯æŒåº“å‘½ä»¤
+	unsigned int krnl_MCallKrnlLibCmd;            //æ ¸å¿ƒæ”¯æŒåº“å‘½ä»¤
+	unsigned int krnl_MReadProperty;              //è¯»å–ç»„ä»¶å±æ€§
+	unsigned int krnl_MWriteProperty;             //è®¾ç½®ç»„ä»¶å±æ€§
+	unsigned int krnl_MMalloc;                    //åˆ†é…å†…å­˜
+	unsigned int krnl_MRealloc;                   //é‡æ–°åˆ†é…å†…å­˜
+	unsigned int krnl_MFree;                      //é‡Šæ”¾å†…å­˜
+	unsigned int krnl_MExitProcess;               //ç»“æŸ
+	unsigned int krnl_MMessageLoop;               //çª—å£æ¶ˆæ¯å¾ªç¯
+	unsigned int krnl_MLoadBeginWin;              //è½½å…¥å¯åŠ¨çª—å£
+	unsigned int krnl_MOtherHelp;                 //è¾…åŠ©åŠŸèƒ½
 };
 
 struct eSymbol_KrnlJmp
 {
-	unsigned int Jmp_MReportError;               //´íÎó»Øµ÷
-	unsigned int Jmp_MCallDllCmd;                //DLLÃüÁî
-	unsigned int Jmp_MCallLibCmd;                //Èı·½Ö§³Ö¿âÃüÁî
-	unsigned int Jmp_MCallKrnlLibCmd;            //ºËĞÄÖ§³Ö¿âÃüÁî
-	unsigned int Jmp_MReadProperty;              //¶ÁÈ¡×é¼şÊôĞÔ
-	unsigned int Jmp_MWriteProperty;             //ÉèÖÃ×é¼şÊôĞÔ
-	unsigned int Jmp_MMalloc;                    //·ÖÅäÄÚ´æ
-	unsigned int Jmp_MRealloc;                   //ÖØĞÂ·ÖÅäÄÚ´æ
-	unsigned int Jmp_MFree;                      //ÊÍ·ÅÄÚ´æ
-	unsigned int Jmp_MExitProcess;               //½áÊø
-	unsigned int Jmp_MMessageLoop;               //´°¿ÚÏûÏ¢Ñ­»·
-	unsigned int Jmp_MLoadBeginWin;              //ÔØÈëÆô¶¯´°¿Ú
-	unsigned int Jmp_MOtherHelp;                 //¸¨Öú¹¦ÄÜ
+	unsigned int Jmp_MReportError;               //é”™è¯¯å›è°ƒ
+	unsigned int Jmp_MCallDllCmd;                //DLLå‘½ä»¤
+	unsigned int Jmp_MCallLibCmd;                //ä¸‰æ–¹æ”¯æŒåº“å‘½ä»¤
+	unsigned int Jmp_MCallKrnlLibCmd;            //æ ¸å¿ƒæ”¯æŒåº“å‘½ä»¤
+	unsigned int Jmp_MReadProperty;              //è¯»å–ç»„ä»¶å±æ€§
+	unsigned int Jmp_MWriteProperty;             //è®¾ç½®ç»„ä»¶å±æ€§
+	unsigned int Jmp_MMalloc;                    //åˆ†é…å†…å­˜
+	unsigned int Jmp_MRealloc;                   //é‡æ–°åˆ†é…å†…å­˜
+	unsigned int Jmp_MFree;                      //é‡Šæ”¾å†…å­˜
+	unsigned int Jmp_MExitProcess;               //ç»“æŸ
+	unsigned int Jmp_MMessageLoop;               //çª—å£æ¶ˆæ¯å¾ªç¯
+	unsigned int Jmp_MLoadBeginWin;              //è½½å…¥å¯åŠ¨çª—å£
+	unsigned int Jmp_MOtherHelp;                 //è¾…åŠ©åŠŸèƒ½
 };
 
 struct EComHead
 {
-	unsigned int dwMagic;  //Î´Öª,Öµ¹Ì¶¨Îª3
-	unsigned int szNone2;  //Î´Öª,Öµ¹Ì¶¨Îª0
-	unsigned int szNone3;  //Î´Öª,ºÃÏñÊÇ¸öËæ»úÊı,ĞŞ¸Ä²»Ó°Ïì³ÌĞò
-	unsigned int lpStartCode;   //ÆğÊ¼ÓÃ»§´úÂëµØÖ·,²»¿ÉĞŞ¸Ä
-	unsigned int lpEString;     //×Ö·û´®×ÊÔ´,Èç¹ûÃ»ÓĞ×Ö·û´®×ÊÔ´,ÔòÎª0
-	unsigned int dwEStringSize; //×Ö·û´®×ÊÔ´´óĞ¡,Èç¹ûÃ»ÓĞ×Ö·û´®×ÊÔ´,ÔòÎª0
-	unsigned int lpEWindow;     //´´½¨×é¼şĞÅÏ¢
-	unsigned int dwEWindowSize; //´´½¨×é¼şĞÅÏ¢´óĞ¡
-	unsigned int dwLibNum;      //Ö§³Ö¿âÊıÁ¿
-	unsigned int lpLibEntry;    //Ö§³Ö¿âĞÅÏ¢Èë¿Ú
-	unsigned int dwApiCount;    //ApiÊıÁ¿
-	unsigned int lpModuleName;  //Ö¸ÏòÄ£¿éÃû³Æ
-	unsigned int lpApiName;     //Ö¸ÏòApiÃû³Æ
+	unsigned int dwMagic;  //æœªçŸ¥,å€¼å›ºå®šä¸º3
+	unsigned int szNone2;  //æœªçŸ¥,å€¼å›ºå®šä¸º0
+	unsigned int szNone3;  //æœªçŸ¥,å¥½åƒæ˜¯ä¸ªéšæœºæ•°,ä¿®æ”¹ä¸å½±å“ç¨‹åº
+	unsigned int lpStartCode;   //èµ·å§‹ç”¨æˆ·ä»£ç åœ°å€,ä¸å¯ä¿®æ”¹
+	unsigned int lpEString;     //å­—ç¬¦ä¸²èµ„æº,å¦‚æœæ²¡æœ‰å­—ç¬¦ä¸²èµ„æº,åˆ™ä¸º0
+	unsigned int dwEStringSize; //å­—ç¬¦ä¸²èµ„æºå¤§å°,å¦‚æœæ²¡æœ‰å­—ç¬¦ä¸²èµ„æº,åˆ™ä¸º0
+	unsigned int lpEWindow;     //åˆ›å»ºç»„ä»¶ä¿¡æ¯
+	unsigned int dwEWindowSize; //åˆ›å»ºç»„ä»¶ä¿¡æ¯å¤§å°
+	unsigned int dwLibNum;      //æ”¯æŒåº“æ•°é‡
+	unsigned int lpLibEntry;    //æ”¯æŒåº“ä¿¡æ¯å…¥å£
+	unsigned int dwApiCount;    //Apiæ•°é‡
+	unsigned int lpModuleName;  //æŒ‡å‘æ¨¡å—åç§°
+	unsigned int lpApiName;     //æŒ‡å‘Apiåç§°
 };
 
 enum eSymbolFuncType
 {
 	eFunc_Unknown = 0x0,
-	//Ò×ÓïÑÔ¿âº¯Êı
+	//æ˜“è¯­è¨€åº“å‡½æ•°
 	eFunc_KrnlLibFunc,
-	//¶ÁÈ¡×é¼şÊôĞÔ
+	//è¯»å–ç»„ä»¶å±æ€§
 	eFunc_KrnlReadProerty,
-	//ÉèÖÃ×é¼şÊôĞÔ
+	//è®¾ç½®ç»„ä»¶å±æ€§
 	eFunc_KrnlWriteProperty,
-	//µ÷ÓÃDLLÃüÁî
+	//è°ƒç”¨DLLå‘½ä»¤
 	eFunc_KrnlDllCmd,
-	//´íÎó»Øµ÷
+	//é”™è¯¯å›è°ƒ
 	eFunc_KrnlReportError,
-	//ÊÍ·ÅÄÚ´æ
+	//é‡Šæ”¾å†…å­˜
 	eFunc_KrnlFreeMem,
-	//ÎÄ±¾Ïà¼Ó
+	//æ–‡æœ¬ç›¸åŠ 
 	eFunc_Strcat,
-	//Á¬ĞøÊ¡ÂÔ²ÎÊı
+	//è¿ç»­çœç•¥å‚æ•°
 	eFunc_PushDefaultArg,
-	//¼ÆËã¶àÎ¬Êı×éÏÂ±ê
+	//è®¡ç®—å¤šç»´æ•°ç»„ä¸‹æ ‡
 	eFunc_CalMultiArrayIndex,
 };
 
@@ -232,63 +232,63 @@ public:
 	ESymbol();
 	~ESymbol();
 public:
-	//¼ÓÔØÒ×ÓïÑÔ¾²Ì¬±àÒë·ûºÅ
+	//åŠ è½½æ˜“è¯­è¨€é™æ€ç¼–è¯‘ç¬¦å·
 	bool LoadEStaticSymbol(unsigned int eHeadAddr, EComHead* eHead);
 
-	//»ñÈ¡º¯Êı·ûºÅÀàĞÍ
+	//è·å–å‡½æ•°ç¬¦å·ç±»å‹
 	eSymbolFuncType GetFuncSymbolType(unsigned int addr);
-	//Í¨¹ı´°¿ÚIDºÍ¿Ø¼şIDË÷Òıµ½¿Ø¼ş
+	//é€šè¿‡çª—å£IDå’Œæ§ä»¶IDç´¢å¼•åˆ°æ§ä»¶
 	EAppControl* GetEAppControl(unsigned int windowID,unsigned int controID);
 private:
-	//¼ÓÔØÖ§³Ö¿âĞÅÏ¢
+	//åŠ è½½æ”¯æŒåº“ä¿¡æ¯
 	bool loadELibInfomation(unsigned int lpLibStartAddr, unsigned int dwLibCount);
-	//É¨Ãè²¢Ê¶±ğÖ§³Ö¿âº¯Êı
+	//æ‰«æå¹¶è¯†åˆ«æ”¯æŒåº“å‡½æ•°
 	bool scanELibFunction(unsigned int lpLibStartAddr, unsigned int dwLibCount);
-	//É¨Ãè²¢Ê¶±ğÒ×ÓïÑÔ»ù´¡ÃüÁî
+	//æ‰«æå¹¶è¯†åˆ«æ˜“è¯­è¨€åŸºç¡€å‘½ä»¤
 	bool scanBasicFunction();
-	//¼ÓÔØÒ×ÓïÑÔºËĞÄº¯Êı
+	//åŠ è½½æ˜“è¯­è¨€æ ¸å¿ƒå‡½æ•°
 	bool loadKrnlInterface(unsigned int lpKrnlEntry);
-	//¼ÓÔØ½çÃæ×ÊÔ´ĞÅÏ¢
+	//åŠ è½½ç•Œé¢èµ„æºä¿¡æ¯
 	bool loadGUIResource(unsigned int lpGUIStart, unsigned int infoSize);
-	//¼ÓÔØÓÃ»§µ¼Èë±í
+	//åŠ è½½ç”¨æˆ·å¯¼å…¥è¡¨
 	bool loadUserImports(unsigned int dwApiCount, unsigned int lpModuleName, unsigned int lpApiName);
-	//´¦ÀíÁ¬ĞøÊ¡ÂÔ²ÎÊı
+	//å¤„ç†è¿ç»­çœç•¥å‚æ•°
 	bool handleFuncPushDefaultArg(unsigned int callAddr);
-	//É¨ÃèÒ×ÓïÑÔÀàĞé±í
+	//æ‰«ææ˜“è¯­è¨€ç±»è™šè¡¨
 	bool scanEClassTable();
-	//½âÎö¿Ø¼ş»ù´¡ÊôĞÔ
+	//è§£ææ§ä»¶åŸºç¡€å±æ€§
 	void parseControlBasciProperty(unsigned char* lpControlInfo, EAppControl* outControl);
-	//¸ù¾İ²Ëµ¥µÄÀàĞÍIDÀ´µÃµ½Ãû³Æ,0x10001 -> ´°¿Ú
+	//æ ¹æ®èœå•çš„ç±»å‹IDæ¥å¾—åˆ°åç§°,0x10001 -> çª—å£
 	std::string getControlTypeName(unsigned int typeId);
 	
 	bool registerKrnlJmpAddr(unsigned int callAddr, unsigned int setAddr);
 
-	//ÉèÖÃ¿Ø¼şµÄÊÂ¼şÃû³Æ
+	//è®¾ç½®æ§ä»¶çš„äº‹ä»¶åç§°
 	void setGuiEventName();
-	//ÇåÀí¿Ø¼ş
+	//æ¸…ç†æ§ä»¶
 	void clearControlData();
 public:
-	//Ö§³Ö¿âĞÅÏ¢
+	//æ”¯æŒåº“ä¿¡æ¯
 	std::vector<eSymbol_ELibInfo> vec_ELibInfo;
-	//ºËĞÄº¯Êı
+	//æ ¸å¿ƒå‡½æ•°
 	eSymbol_KrnlCall krnlCall;
 	eSymbol_KrnlJmp krnlJmp;
-	//ÓÃ»§ÆğÊ¼µØÖ·
+	//ç”¨æˆ·èµ·å§‹åœ°å€
 	unsigned int userCodeStartAddr;
-	//ÓÃ»§½áÊøµØÖ·,Ä¿Ç°ÔİÊ±»¹Ã»ÓĞÊ²Ã´ºÃ°ì·¨»ñÈ¡Õâ¸öµØÖ·,Èç¹ûÓĞºÃµÄÏë·¨»¶Ó­Ìáissue
+	//ç”¨æˆ·ç»“æŸåœ°å€,ç›®å‰æš‚æ—¶è¿˜æ²¡æœ‰ä»€ä¹ˆå¥½åŠæ³•è·å–è¿™ä¸ªåœ°å€,å¦‚æœæœ‰å¥½çš„æƒ³æ³•æ¬¢è¿æissue
 	unsigned int userCodeEndAddr;
 
-	//µ¼Èë±í,keyÊÇË÷Òı,valueÊÇµ¼ÈëĞÅÏ¢
+	//å¯¼å…¥è¡¨,keyæ˜¯ç´¢å¼•,valueæ˜¯å¯¼å…¥ä¿¡æ¯
 	std::vector<eSymbol_ImportsApi> importsApiList;
-	//ÁÙÊ±µ¼Èë±í
+	//ä¸´æ—¶å¯¼å…¥è¡¨
 	std::vector<std::string> tmpImportsApiList;
 
-	//´æ´¢ËùÓĞµÄ¿Ø¼şĞÅÏ¢
+	//å­˜å‚¨æ‰€æœ‰çš„æ§ä»¶ä¿¡æ¯
 	std::vector<EAppControl*> allControlList;
 private:
 
-	//±ê¼Çº¯ÊıÀàĞÍ
+	//æ ‡è®°å‡½æ•°ç±»å‹
 	std::map<unsigned int,eSymbolFuncType> eSymbolFuncTypeMap;
-	//´æ´¢ËùÓĞµÄ¿Ø¼şĞÅÏ¢,ÄÚÈİºÍallControlListÒ»Ñù
+	//å­˜å‚¨æ‰€æœ‰çš„æ§ä»¶ä¿¡æ¯,å†…å®¹å’ŒallControlListä¸€æ ·
 	std::map<eSymbol_ControlIndex, EAppControl*> allControlMap;
 };

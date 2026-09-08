@@ -1,4 +1,4 @@
-#include "CKrnl_Tab.h"
+ï»¿#include "CKrnl_Tab.h"
 
 
 CKrnl_Tab::CKrnl_Tab()
@@ -17,37 +17,37 @@ std::string CKrnl_Tab::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		ret = "±»µ¥»÷";
+		ret = "è¢«å•å‡»";
 		break;
 	case 1:
-		ret = "½«¸Ä±ä×Ó¼Ğ";
+		ret = "å°†æ”¹å˜å­å¤¹";
 		break;
 	case 2:
-		ret = "×Ó¼Ğ±»¸Ä±ä";
+		ret = "å­å¤¹è¢«æ”¹å˜";
 		break;
 	case -1:
-		ret = "Êó±ê×ó¼ü±»°´ÏÂ";
+		ret = "é¼ æ ‡å·¦é”®è¢«æŒ‰ä¸‹";
 		break;
 	case -2:
-		ret = "Êó±ê×ó¼ü±»·Å¿ª";
+		ret = "é¼ æ ‡å·¦é”®è¢«æ”¾å¼€";
 		break;
 	case -3:
-		ret = "±»Ë«»÷";
+		ret = "è¢«åŒå‡»";
 		break;
 	case -4:
-		ret = "Êó±êÓÒ¼ü±»°´ÏÂ";
+		ret = "é¼ æ ‡å³é”®è¢«æŒ‰ä¸‹";
 		break;
 	case -5:
-		ret = "Êó±êÓÒ¼ü±»·Å¿ª";
+		ret = "é¼ æ ‡å³é”®è¢«æ”¾å¼€";
 		break;
 	case -6:
-		ret = "Êó±êÎ»ÖÃ±»ÒÆ¶¯";
+		ret = "é¼ æ ‡ä½ç½®è¢«ç§»åŠ¨";
 		break;
 	case -12:
-		ret = "¹öÂÖ±»¹ö¶¯";
+		ret = "æ»šè½®è¢«æ»šåŠ¨";
 		break;
 	default:
-		ret = "Î´ÖªÊÂ¼ş";
+		ret = "æœªçŸ¥äº‹ä»¶";
 		break;
 	}
 	return ret;
@@ -63,37 +63,37 @@ std::string CKrnl_Tab::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "±íÍ··½Ïò";
+		return "è¡¨å¤´æ–¹å‘";
 	case 9:
-		return "ÔÊĞí¶àĞĞ±íÍ·";
+		return "å…è®¸å¤šè¡Œè¡¨å¤´";
 	case 10:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 11:
-		return "×Ó¼Ğ¹ÜÀí";
+		return "å­å¤¹ç®¡ç†";
 	case 12:
-		return "ÏÖĞĞ×Ó¼Ğ";
+		return "ç°è¡Œå­å¤¹";
 	case 13:
-		return "Òş²Ø×ÔÉí";
+		return "éšè—è‡ªèº«";
 	case 14:
-		return "ÊÇ·ñÌî³ä±³¾°";
+		return "æ˜¯å¦å¡«å……èƒŒæ™¯";
 	case 15:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

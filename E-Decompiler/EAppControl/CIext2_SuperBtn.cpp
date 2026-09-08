@@ -1,4 +1,4 @@
-#include "CIext2_SuperBtn.h"
+ï»¿#include "CIext2_SuperBtn.h"
 
 CIext2_SuperBtn::CIext2_SuperBtn()
 {
@@ -15,7 +15,7 @@ std::string CIext2_SuperBtn::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "±»µ¥»÷";
+		return "è¢«å•å‡»";
 	default:
 		break;
 	}
@@ -32,76 +32,76 @@ std::string CIext2_SuperBtn::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "°´Å¥·ç¸ñ";
+		return "æŒ‰é’®é£æ ¼";
 	case 9:
-		return "Ñ¡Ôñ¿ò·½Ê½";
+		return "é€‰æ‹©æ¡†æ–¹å¼";
 	case 10:
-		return "Ñ¡ÖĞ";
+		return "é€‰ä¸­";
 	case 11:
-		return "¶ÔÆë·½Ê½";
+		return "å¯¹é½æ–¹å¼";
 	case 12:
-		return "Ñ¹Èë·½Ê½";
+		return "å‹å…¥æ–¹å¼";
 	case 13:
-		return "»æÖÆ±ß¿ò";
+		return "ç»˜åˆ¶è¾¹æ¡†";
 	case 14:
-		return "»æÖÆ½¹µã";
+		return "ç»˜åˆ¶ç„¦ç‚¹";
 	case 15:
-		return "Í¨³£Í¼Æ¬";
+		return "é€šå¸¸å›¾ç‰‡";
 	case 16:
-		return "Í¨³£Í¼Æ¬Í¸Ã÷É«";
+		return "é€šå¸¸å›¾ç‰‡é€æ˜è‰²";
 	case 17:
-		return "µãÈ¼Í¼Æ¬";
+		return "ç‚¹ç‡ƒå›¾ç‰‡";
 	case 18:
-		return "µãÈ¼Í¼Æ¬Í¸Ã÷É«";
+		return "ç‚¹ç‡ƒå›¾ç‰‡é€æ˜è‰²";
 	case 19:
-		return "½ûÖ¹Í¼Æ¬";
+		return "ç¦æ­¢å›¾ç‰‡";
 	case 20:
-		return "½ûÖ¹Í¼Æ¬Í¸Ã÷É«";
+		return "ç¦æ­¢å›¾ç‰‡é€æ˜è‰²";
 	case 21:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 22:
-		return "±êÌâ";
+		return "æ ‡é¢˜";
 	case 23:
-		return "Ê¹ÓÃÄ¬ÈÏÉ«";
+		return "ä½¿ç”¨é»˜è®¤è‰²";
 	case 24:
-		return "Í¨³£Ç°¾°É«";
+		return "é€šå¸¸å‰æ™¯è‰²";
 	case 25:
-		return "Í¨³£±³¾°É«";
+		return "é€šå¸¸èƒŒæ™¯è‰²";
 	case 26:
-		return "µãÈ¼Ç°¾°É«";
+		return "ç‚¹ç‡ƒå‰æ™¯è‰²";
 	case 27:
-		return "µãÈ¼±³¾°É«";
+		return "ç‚¹ç‡ƒèƒŒæ™¯è‰²";
 	case 28:
-		return "½¹µãÇ°¾°É«";
+		return "ç„¦ç‚¹å‰æ™¯è‰²";
 	case 29:
-		return "½¹µã±³¾°É«";
+		return "ç„¦ç‚¹èƒŒæ™¯è‰²";
 	case 30:
-		return "±ê×¼ÒôÌáÊ¾";
+		return "æ ‡å‡†éŸ³æç¤º";
 	case 31:
-		return "¾­¹ıÌáÊ¾Òô";
+		return "ç»è¿‡æç¤ºéŸ³";
 	case 32:
-		return "µ¥»÷ÌáÊ¾Òô";
+		return "å•å‡»æç¤ºéŸ³";
 	case 33:
-		return "ÌáÊ¾ÎÄ±¾";
+		return "æç¤ºæ–‡æœ¬";
 	case 34:
-		return "Ä¬ÈÏÀàĞÍ";
+		return "é»˜è®¤ç±»å‹";
 	}
-	return "Î´ÖªÊÂ¼ş";
+	return "æœªçŸ¥äº‹ä»¶";
 }
 

@@ -1,4 +1,4 @@
-#include "CKrnl_ComboBox.h"
+ï»¿#include "CKrnl_ComboBox.h"
 
 CKrnl_ComboBox::CKrnl_ComboBox()
 {
@@ -15,15 +15,15 @@ std::string CKrnl_ComboBox::GetEventName(int eventIndex)
 	switch (eventIndex)
 	{
 	case 0:
-		return "ÁĞ±íÏî±»Ñ¡Ôñ";
+		return "åˆ—è¡¨é¡¹è¢«é€‰æ‹©";
 	case 1:
-		return "±à¼­ÄÚÈİ±»¸Ä±ä";
+		return "ç¼–è¾‘å†…å®¹è¢«æ”¹å˜";
 	case 2:
-		return "½«µ¯³öÁĞ±í";
+		return "å°†å¼¹å‡ºåˆ—è¡¨";
 	case 3:
-		return "ÁĞ±í±»¹Ø±Õ";
+		return "åˆ—è¡¨è¢«å…³é—­";
 	case 4:
-		return "Ë«»÷Ñ¡Ôñ";
+		return "åŒå‡»é€‰æ‹©";
 	default:
 		break;
 	}
@@ -40,55 +40,55 @@ std::string CKrnl_ComboBox::GetPropertyName(unsigned int propertyIndex)
 	switch (propertyIndex)
 	{
 	case 0:
-		return "×ó±ß";
+		return "å·¦è¾¹";
 	case 1:
-		return "¶¥±ß";
+		return "é¡¶è¾¹";
 	case 2:
-		return "¿í¶È";
+		return "å®½åº¦";
 	case 3:
-		return "¸ß¶È";
+		return "é«˜åº¦";
 	case 4:
-		return "±ê¼Ç";
+		return "æ ‡è®°";
 	case 5:
-		return "¿ÉÊÓ";
+		return "å¯è§†";
 	case 6:
-		return "½ûÖ¹";
+		return "ç¦æ­¢";
 	case 7:
-		return "Êó±êÖ¸Õë";
+		return "é¼ æ ‡æŒ‡é’ˆ";
 	case 8:
-		return "ÀàĞÍ";
+		return "ç±»å‹";
 	case 9:
-		return "ÄÚÈİ";
+		return "å†…å®¹";
 	case 10:
-		return "×î´óÎÄ±¾³¤¶È";
+		return "æœ€å¤§æ–‡æœ¬é•¿åº¦";
 	case 11:
-		return "ÆğÊ¼Ñ¡ÔñÎ»ÖÃ";
+		return "èµ·å§‹é€‰æ‹©ä½ç½®";
 	case 12:
-		return "±»Ñ¡Ôñ×Ö·ûÊı";
+		return "è¢«é€‰æ‹©å­—ç¬¦æ•°";
 	case 13:
-		return "±»Ñ¡ÔñÎÄ±¾";
+		return "è¢«é€‰æ‹©æ–‡æœ¬";
 	case 14:
-		return "×Ô¶¯ÅÅĞò";
+		return "è‡ªåŠ¨æ’åº";
 	case 15:
-		return "ĞĞ¼ä¾à";
+		return "è¡Œé—´è·";
 	case 16:
-		return "ÎÄ±¾ÑÕÉ«";
+		return "æ–‡æœ¬é¢œè‰²";
 	case 17:
-		return "±³¾°ÑÕÉ«";
+		return "èƒŒæ™¯é¢œè‰²";
 	case 18:
-		return "×ÖÌå";
+		return "å­—ä½“";
 	case 19:
-		return "ÏÖĞĞÑ¡ÖĞÏî";
+		return "ç°è¡Œé€‰ä¸­é¡¹";
 	case 20:
-		return "ÁĞ±íÏîÄ¿";
+		return "åˆ—è¡¨é¡¹ç›®";
 	case 21:
-		return "ÏîÄ¿ÊıÖµ";
+		return "é¡¹ç›®æ•°å€¼";
 	case 22:
-		return "Êı¾İÔ´";
+		return "æ•°æ®æº";
 	case 23:
-		return "Êı¾İÁĞ";
+		return "æ•°æ®åˆ—";
 	case 24:
-		return "³ıÈ¥ÖØ¸´";
+		return "é™¤å»é‡å¤";
 	}
-	return "Î´ÖªÊôĞÔ";
+	return "æœªçŸ¥å±æ€§";
 }

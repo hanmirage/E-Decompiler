@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//³¬¼¶°´Å¥
+//è¶…çº§æŒ‰é’®
 
 struct CIext2_SuperBtn :public EAppControl
 {

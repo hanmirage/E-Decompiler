@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//±à¼­¿ò
+//ç¼–è¾‘æ¡†
 
 struct CKrnl_EditBox :public EAppControl
 {

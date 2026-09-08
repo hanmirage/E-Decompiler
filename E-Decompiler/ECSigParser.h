@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <pro.h>
 #include <set>
 #include <map>
@@ -9,43 +9,43 @@ class func_t;
 class ECSigParser
 {
 public:
-	//Éú³ÉÒ×ÓïÑÔÄ£¿éº¯ÊıÌØÕ÷Âë
+	//ç”Ÿæˆæ˜“è¯­è¨€æ¨¡å—å‡½æ•°ç‰¹å¾ç 
 	static int GenerateECSig(ea_t startAddr);
 	static void InitECSigKrnl(eSymbol_KrnlJmp& inFunc);
 	static void InitECSigBasciFunc(std::map<ea_t, qstring>& mhash);
 	static void InitECSigResource(uint32 startAddr, uint32 endAddr);
 	static void ScanMSig(const char* sigPath, ea_t rangeStart, ea_t rangeEnd);
-	//µ÷ÊÔÄ£Ê½ÏÂ×¨ÓÃ£¬ÅúÁ¿Éú³ÉÌØÕ÷Âë
+	//è°ƒè¯•æ¨¡å¼ä¸‹ä¸“ç”¨ï¼Œæ‰¹é‡ç”Ÿæˆç‰¹å¾ç 
 	static void Debug_outputECSig();
 private:
-	//¼ÆËãÒ»¸öÓÃ»§º¯ÊıµÄMD5
+	//è®¡ç®—ä¸€ä¸ªç”¨æˆ·å‡½æ•°çš„MD5
 	static qstring GetFunctionMD5(ea_t FuncStartAddr);
-	//¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-	//Áé»îµÄµ¥²Ù×÷ÊıÖ¸Áî
+	//â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+	//çµæ´»çš„å•æ“ä½œæ•°æŒ‡ä»¤
 	static qstring GetSig_FlexSingleInst(insn_t& ins);
-	//Áé»îµÄË«²Ù×÷ÊıÖ¸Áî
+	//çµæ´»çš„åŒæ“ä½œæ•°æŒ‡ä»¤
 	static qstring GetSig_FlexDoubleInst(insn_t& ins);
-	//¸¡µãÖ¸Áî
+	//æµ®ç‚¹æŒ‡ä»¤
 	static qstring GetSig_FloatInstA(insn_t& ins);
 	static qstring GetSig_FloatInstB(insn_t& ins);
-	//Âß¼­ÔËËãÖ¸Áî
+	//é€»è¾‘è¿ç®—æŒ‡ä»¤
 	static qstring GetSig_LogicInst(insn_t& ins);
 	static qstring GetSig_Imul(insn_t& ins);
 	static qstring GetSig_Pop(insn_t& ins);
 	static qstring GetSig_LongJmp(insn_t& ins);
 	static qstring GetSig_Call(insn_t& ins, qvector<qstring>& vec_saveSig, bool& out_bSkipState);
 	static qstring GetSig_Nop(insn_t& ins);
-	//¼ì²éÊÇ·ñÎªÒ×ÓïÑÔ±ê×¼º¯Êı£¬²ÎÊıÎªº¯ÊıÆğÊ¼µØÖ·
+	//æ£€æŸ¥æ˜¯å¦ä¸ºæ˜“è¯­è¨€æ ‡å‡†å‡½æ•°ï¼Œå‚æ•°ä¸ºå‡½æ•°èµ·å§‹åœ°å€
 	static bool IsEStandardFunction(ea_t startAddr);
-	//Ñ°ÕÒÒ×ÓïÑÔ±ê×¼º¯ÊıÎ²²¿,²ÎÊıÎªº¯ÊıÆğÊ¼µØÖ·,·µ»Ø×îºóÒ»ÌõÖ¸ÁîµÄµØÖ·
+	//å¯»æ‰¾æ˜“è¯­è¨€æ ‡å‡†å‡½æ•°å°¾éƒ¨,å‚æ•°ä¸ºå‡½æ•°èµ·å§‹åœ°å€,è¿”å›æœ€åä¸€æ¡æŒ‡ä»¤çš„åœ°å€
 	static ea_t SeachEFuncEnd(func_t* startAddr);
-	//ÅĞ¶ÏÒ»¸ö³£Á¿ÊÇ·ñÔÚÓÃ»§×ÊÔ´µØÖ··¶Î§Ö®ÄÚ
+	//åˆ¤æ–­ä¸€ä¸ªå¸¸é‡æ˜¯å¦åœ¨ç”¨æˆ·èµ„æºåœ°å€èŒƒå›´ä¹‹å†…
 	static bool IsUserResourceImm(uint32 imm);
-	//ÅĞ¶ÏÒ»¸öÆ«ÒÆµØÖ·ÊÇ·ñÔÚÓÃ»§×ÊÔ´µØÖ··¶Î§Ö®ÄÚ
+	//åˆ¤æ–­ä¸€ä¸ªåç§»åœ°å€æ˜¯å¦åœ¨ç”¨æˆ·èµ„æºåœ°å€èŒƒå›´ä¹‹å†…
 	static bool IsUserResourceOffset(uint32 offset);
-	//Èı¶ÎÊ½Ö¸ÁîÈ¡Ä£ºıÌØÕ÷
+	//ä¸‰æ®µå¼æŒ‡ä»¤å–æ¨¡ç³Šç‰¹å¾
 	static qstring GetInsPattern_Three(insn_t& ins);
-	//Á½¶ÎÊ½Ö¸ÁîÈ¡Ä£ºıÌØÕ÷
+	//ä¸¤æ®µå¼æŒ‡ä»¤å–æ¨¡ç³Šç‰¹å¾
 	static qstring GetInsPattern_Two(insn_t& ins, char offset);
 private:
 	static eSymbol_KrnlJmp m_KrnlJmp;
@@ -54,6 +54,6 @@ private:
 	static uint32 m_UserResourceEndAddr;
 	static std::map<ea_t, qstring> mSave_SubFunc;
 
-	//Ä£ºıÌØÕ÷
+	//æ¨¡ç³Šç‰¹å¾
 	static bool bFuzzySig;
 };

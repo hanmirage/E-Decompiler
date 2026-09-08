@@ -1,16 +1,16 @@
-#pragma once
+ï»¿#pragma once
 #include <pro.h>
 #include <kernwin.hpp>
 #include <vector>
 
-//Ò×ÓïÑÔ¿Ø¼ş½»²æÒıÓÃ
+//æ˜“è¯­è¨€æ§ä»¶äº¤å‰å¼•ç”¨
 
 class ESymbol;
 struct EAppControl;
 
 class EAppControlXref:public action_handler_t
 {
-	//½»²æÒıÓÃÀàĞÍ
+	//äº¤å‰å¼•ç”¨ç±»å‹
 	enum eAppControlXrefType
 	{
 		XrefWriteProperty = 0x0,
@@ -26,18 +26,18 @@ class EAppControlXref:public action_handler_t
 	};
 public:
 	EAppControlXref(ESymbol& symbol);
-	//×¢²áHandler
+	//æ³¨å†ŒHandler
 	void RegisterAction(void* owner);
-	//Ìí¼Ó²Ëµ¥Ïî
+	//æ·»åŠ èœå•é¡¹
 	void AttachToPopupMenu(TWidget* view, TPopupMenu* p);
 private:
-	//³õÊ¼»¯½»²æÒıÓÃÊı¾İ
+	//åˆå§‹åŒ–äº¤å‰å¼•ç”¨æ•°æ®
 	bool initXrefData(unsigned int callAddr);
 	int activate(action_activation_ctx_t* ctx)override;
 	action_state_t idaapi update(action_update_ctx_t* ctx) override;
-	//»ñÈ¡¶ÁĞ´½»²æÒıÓÃµØÖ·µÄ¿Ø¼şĞÅÏ¢,·µ»Øfalse±íÊ¾Ê§°Ü
+	//è·å–è¯»å†™äº¤å‰å¼•ç”¨åœ°å€çš„æ§ä»¶ä¿¡æ¯,è¿”å›falseè¡¨ç¤ºå¤±è´¥
 	bool getRWXrefAddrText(unsigned int XrefAddr, std::string& outText);
-	//»ñÈ¡Ö´ĞĞ½»²æÒıÓÃµØÖ·µÄ¿Ø¼şĞÅÏ¢,·µ»Øfalse±íÊ¾Ê§°Ü
+	//è·å–æ‰§è¡Œäº¤å‰å¼•ç”¨åœ°å€çš„æ§ä»¶ä¿¡æ¯,è¿”å›falseè¡¨ç¤ºå¤±è´¥
 	bool getExecuteXrefAddrText(unsigned int XrefAddr, std::string& outText);
 	void showXrefList();
 private:

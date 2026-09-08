@@ -1,4 +1,4 @@
-#include "SectionManager.h"
+﻿#include "SectionManager.h"
 #include <segment.hpp>
 #include <bytes.hpp>
 
@@ -48,7 +48,7 @@ ea_t SectionManager::SeachBin(qstring HexStr)
 		if (!pSegment) {
 			continue;
 		}
-		ret = bin_search2(pSegment->start_ea, pSegment->end_ea, binPat, 0x0);
+		ret = bin_search(pSegment->start_ea, pSegment->end_ea, binPat, 0x0);
 		if (ret != BADADDR) {
 			break;
 		}

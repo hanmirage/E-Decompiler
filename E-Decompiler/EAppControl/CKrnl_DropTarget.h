@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "EAppControl.h"
 
-//ÍÏ·Å¶ÔÏó
+//æ‹–æ”¾å¯¹è±¡
 
 struct CKrnl_DropTarget :public EAppControl
 {
